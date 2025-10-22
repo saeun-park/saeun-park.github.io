@@ -1,4 +1,5 @@
 import Button from '../components/\bButton';
+import ProfieImg from '../assets/images/chococat.jpg';
 
 const Profile = () => {
   return (
@@ -14,7 +15,7 @@ const Profile = () => {
             <div className="relative">
               <div className="rounded-full p-16">
                 <img
-                  src="src/assets/images/chococat.jpg"
+                  src={ProfieImg}
                   alt="프로필"
                   className="rounded-full w-80"
                 />

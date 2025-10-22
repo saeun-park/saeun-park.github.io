@@ -1,3 +1,7 @@
+import TossLogo from '../assets/images/Toss.jpg';
+import KBLogo from '../assets/images/kb1.png';
+import StatisticsLogo from '../assets/images/StatisticsKorea.svg';
+
 export interface ExperienceData {
   company: string;
   position: string;
@@ -17,7 +21,7 @@ export const experiences: ExperienceData[] = [
       'OCR 관련 모델 학습 데이터 구축 및 이미 품질 검수 업무 수행',
       '이미지 내 객체를 박스로 표시하는 Bounding Box 및 텍스트 및 객체에 대한 Annotation',
     ],
-    logo: 'src/assets/images/Toss.jpg',
+    logo: TossLogo,
   },
   {
     company: `KB국민은행 IT's Your Life 6기`,
@@ -30,7 +34,7 @@ export const experiences: ExperienceData[] = [
       '금융 서비스 기획 및 개발: Vue.js 프론트엔드 구현, Spring 백엔드 및 MySQL 연동, 증여 시뮬레이션·금융상품 추천·챗봇 기능 개발',
       '협업 경험: Git/GitHub으로 버전 관리, Notion/Jira 활용 팀 일정·문서 관리 및 협업 진행',
     ],
-    logo: 'src/assets/images/kb1.png',
+    logo: KBLogo,
   },
   {
     company: '통계청',
@@ -44,6 +48,6 @@ export const experiences: ExperienceData[] = [
       '모델 생성 annotation 검수·큐레이션, Segmentation 기법으로 표 구조 재현 및 효율 향상',
       '구축 데이터 기반 학습 모델, annotation 97% · 표 인식 98% mAP 성능 달성에 기여',
     ],
-    logo: 'src/assets/images/StatisticsKorea.svg',
+    logo: StatisticsLogo,
   },
 ];
