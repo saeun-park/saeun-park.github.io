@@ -1,57 +1,39 @@
-import Button from '../components/\bButton';
-import ProfieImg from '../assets/images/chococat.jpg';
-
 const Profile = () => {
   return (
     <section
       id="profile"
-      className="flex items-center justify-center px-6 pt-20"
+      className="relative h-screen flex flex-col justify-between items-center bg-gray-200 z-20 overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto w-full mb-6">
-        {/* 이미지 + 텍스트 섹션 */}
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* 왼쪽: 이미지 */}
-          <div className="flex justify-center">
-            <div className="relative">
-              <div className="rounded-full p-16">
-                <img
-                  src={ProfieImg}
-                  alt="프로필"
-                  className="rounded-full w-80"
-                />
-              </div>
-            </div>
-          </div>
+      {/* Local Background Blobs */}
+      <div
+        className="absolute top-[-10rem] left-[-10rem] w-[50rem] h-[50rem] bg-pink-300/70 rounded-full blur-3xl animate-blob"
+        style={{ animationDelay: '0s' }}
+      ></div>
+      <div
+        className="absolute bottom-[-10rem] right-[-10rem] w-[40rem] h-[40rem] bg-blue-300/50 rounded-full blur-3xl animate-blob"
+        style={{ animationDelay: '2s' }}
+      ></div>
+      <div
+        className="absolute top-[20%] left-[40%] w-[25rem] h-[25rem] bg-purple-300/50 rounded-full blur-3xl animate-blob"
+        style={{ animationDelay: '4s' }}
+      ></div>
 
-          {/* 오른쪽: 텍스트 */}
-          <div className="text-left">
-            <h1 className="text-3xl md:text-5xl mb-6">
-              <span className="text-blue-800 font-extrabold">
-                박사은 Saeun Park
-              </span>
-              <p className="mt-4 text-2xl font-bold">
-                데이터 분석가 포트폴리오
-              </p>
-            </h1>
+      {/* Main Title */}
+      <div className="absolute top-[40%] left-[10%] -translate-y-1/2 text-left w-full max-w-6xl mx-auto px-6">
+        <h1 className="text-6xl md:text-8xl font-montserrat font-bold leading-relaxed text-gray-800">
+          SAEUN'S <br /> PORTFOLIO
+        </h1>
+      </div>
 
-            <p className="text-lg mb-8 leading-relaxed">
-              데이터 기반의 고객 여정 설계부터 서비스 구현까지,
-              <br />
-              전체 비즈니스를 이해하려고 노력하는 데이터 분석가입니다.
-              <br />
-              데이터로 비즈니스 문제를 해결하고 사회적 가치를 만들고자 합니다.
-            </p>
-
-            <div className="flex gap-4">
-              <Button variant="primary" href="https://github.com/saeun-park">
-                깃허브 보러가기
-              </Button>
-              <Button variant="secondary" href="https://ajsklaoao.tistory.com">
-                블로그 보러가기
-              </Button>
-            </div>
-          </div>
-        </div>
+      {/* Introductory Text */}
+      <div className="absolute bottom-[30%] left-[10%] text-left w-full max-w-6xl mx-auto px-6">
+        <p className="text-xl font-extralight leading-loose text-gray-800 ">
+          안녕하세요, 기획과 데이터를 바탕으로 문제를 해결하고, 개발로 결과를
+          만들어내는 박사은입니다.
+          <br />
+          서비스를 만드는 데서 끝내지 않고, 실제 사용되는 상황까지 고려해
+          구현합니다.
+        </p>
       </div>
     </section>
   );

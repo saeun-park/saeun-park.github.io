@@ -66,32 +66,38 @@ const TechStack = () => {
   ];
 
   return (
-    <div className="mt-16 space-y-8">
-      {categories.map((category) => (
-        <div key={category.title} className="flex items-center gap-6">
-          <h3 className="text-lg font-bold text-gray-800 w-32 text-right flex-shrink-0">
-            {category.title}
-          </h3>
-          <div className="flex gap-4 flex-wrap">
-            {category.items.map((tech) => {
-              const Icon = tech.icon;
-              return (
-                <div
-                  key={tech.name}
-                  className="group relative w-14 h-14 bg-white rounded-lg shadow flex items-center justify-center hover:shadow-lg transition-shadow"
-                >
-                  <Icon className="text-2xl" style={{ color: tech.color }} />
-                  <div className="absolute -bottom-7 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                    <span className="text-xs text-gray-600 font-medium">
-                      {tech.name}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      ))}
+    <div className="marquee-container overflow-hidden">
+      <div className="marquee-content flex items-center gap-8">
+        {categories.flatMap((category) =>
+          category.items.map((tech) => {
+            const Icon = tech.icon;
+            return (
+              <div
+                key={tech.name}
+                className="flex flex-col items-center justify-center flex-shrink-0 mr-12"
+              >
+                <Icon className="text-8xl mb-2" style={{ color: tech.color }} />
+                <span className=" text-gray-700 font-medium">{tech.name}</span>
+              </div>
+            );
+          })
+        )}
+        {/* Duplicate content for seamless looping */}
+        {categories.flatMap((category) =>
+          category.items.map((tech) => {
+            const Icon = tech.icon;
+            return (
+              <div
+                key={`${tech.name}-duplicate`} // Unique key for duplicates
+                className="flex flex-col items-center justify-center flex-shrink-0 mr-12"
+              >
+                <Icon className="text-8xl mb-2" style={{ color: tech.color }} />
+                <span className=" text-gray-700 font-medium">{tech.name}</span>
+              </div>
+            );
+          })
+        )}
+      </div>
     </div>
   );
 };

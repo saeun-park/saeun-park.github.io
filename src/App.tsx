@@ -43,25 +43,44 @@ const Portfolio = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    const header = document.getElementById('main-header');
+    const headerOffset = header ? header.offsetHeight : 0; // Get header height
     const element = document.getElementById(sectionId);
+
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset - 20; // -20 for a little extra padding
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      setActiveSection(sectionId);
     }
   };
 
   return (
-    <div className="min-h-screen">
-      <Header
-        activeSection={activeSection}
-        onNavigate={scrollToSection}
-      ></Header>
-      <Profile></Profile>
-      <AboutMe></AboutMe>
-      <Skills></Skills>
-      <Experience></Experience>
-      <Project></Project>
-      <Etc></Etc>
-      <Footer></Footer>
+    <div className="relative min-h-screen">
+      {/* Content */}
+      <div className="relative z-10">
+        <Header
+          activeSection={activeSection}
+          onNavigate={scrollToSection}
+        ></Header>
+        <Profile></Profile>
+        <main className="max-w-6xl mx-auto px-4 mb-12 space-y-12">
+          <AboutMe></AboutMe>
+        </main>
+        <Skills></Skills> {/* Full width skills section */}
+        <main className="max-w-6xl mx-auto px-4 mb-12 space-y-12">
+          {' '}
+          {/* Subsequent sections */}
+          <Experience></Experience>
+          <Project></Project>
+          <Etc></Etc>
+        </main>
+        <Footer></Footer>
+      </div>
     </div>
   );
 };

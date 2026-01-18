@@ -17,8 +17,8 @@ const Button = ({
     'px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all hover:scale-105';
 
   const variantStyles = {
-    primary: 'bg-blue-800 text-white',
-    secondary: 'bg-white border-2',
+    primary: 'bg-white/10 border border-gray-700 text-gray-700',
+    secondary: 'border-2 border-gray-400 text-gray-200',
   };
 
   const buttonClasses = `${baseStyles} ${variantStyles[variant]} ${className}`;

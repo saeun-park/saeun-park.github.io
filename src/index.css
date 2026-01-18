@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.marquee-container {
+  /* Ensure container doesn't affect document flow with width */
+  width: 100%;
+}
+
+.marquee-content {
+  animation: marquee 50s linear infinite; /* Adjust speed as needed */
+  white-space: nowrap; /* Prevent items from wrapping */
+  width: max-content; /* Ensure content takes enough width for animation */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(
+      -50%
+    ); /* Move half the content width for seamless loop */
+  }
+}

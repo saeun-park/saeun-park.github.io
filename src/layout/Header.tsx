@@ -5,28 +5,28 @@ interface HeaderProps {
 
 const Header = ({ activeSection, onNavigate }: HeaderProps) => {
   return (
-    <nav className="fixed top-0 w-full bg-white/80 z-50 shadow-sm">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav id="main-header" className=" fixed top-0 w-full z-50 bg-white/5 backdrop-blur-lg border-b border-white/10">
+      <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
         <div
-          className={`text-2xl font-bold cursor-pointer ${
+          className={`text-lg font-semibold cursor-pointer transition-colors hover:text-pink-400 ${
             activeSection === 'profile'
-              ? 'text-blue-800 font-extrabold'
-              : 'hover:text-blue-800'
+              ? 'text-white font-light'
+              : 'text-gray-600'
           }`}
           onClick={() => onNavigate('profile')}
         >
-          DA Portfolio
+          @SAEUNNPARK
         </div>
         <div className="flex gap-8">
-          {['About Me', 'Skills', 'Experience', 'Projects', 'Etc'].map(
+          {['ABOUT ME', 'SKILLS', 'EXPERIENCE', 'PROJECTS', 'ETC'].map(
             (item) => (
               <button
                 key={item}
                 onClick={() => onNavigate(item.replace(/ /g, '').toLowerCase())}
-                className={`text-md font-medium ${
+                className={`text-lg font-light transition-colors hover:text-pink-400 ${
                   activeSection === item.replace(/ /g, '').toLowerCase()
-                    ? 'text-blue-800 font-extrabold'
-                    : 'hover:text-blue-800'
+                    ? 'text-pink-400 font-extrabold'
+                    : 'text-gray-600'
                 }`}
               >
                 {item}

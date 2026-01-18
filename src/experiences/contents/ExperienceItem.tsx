@@ -9,17 +9,17 @@ interface ExperienceItemProps {
 
 const ExperienceItem = ({
   company,
-  position,
+  // position,
   period,
-  months,
+  // months,
   description,
   logo,
 }: ExperienceItemProps) => {
   return (
-    <div className="flex gap-16 items-start">
+    <div className="flex gap-24 items-start">
       {/* 왼쪽: 로고 */}
       <div className="flex-shrink-0">
-        <div className="w-36 h-36 rounded-full overflow-hidden bg-white shadow-md">
+        <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-200 shadow-md">
           <img
             src={logo}
             alt={`${company} 로고`}
@@ -31,21 +31,21 @@ const ExperienceItem = ({
       {/* 오른쪽: 정보 */}
       <div className="flex-1">
         <div className="flex items-center gap-3 mb-2">
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">{company}</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">{company}</h3>
         </div>
-        <p className="text-sm text-gray-500 mb-3">{period}</p>
+        <p className=" text-gray-700 mb-3">{period}</p>
         <div className="flex gap-3 flex-wrap">
-          <span className="px-5 py-1 bg-gray-800 text-white text-sm rounded-2xl mb-3 inline-block">
+          {/* <span className="px-5 py-1 bg-gray-800 text-white rounded-2xl mb-3 inline-block">
             {position}
-          </span>
-          <span className="px-4 py-1 bg-white text-gray-800 border-2 border-gray-800 text-sm rounded-2xl mb-3 inline-block">
+          </span> */}
+          {/* <span className="px-4 py-1 bg-gray-200 text-gray-700 border-2 border-gray-400 rounded-2xl mb-3 inline-block">
             {months}
-          </span>
+          </span>{' '} */}
         </div>
 
         <ul className="space-y-2">
           {description.map((item, index) => (
-            <li key={index} className="text-gray-600 leading-relaxed flex">
+            <li key={index} className=" text-gray-700 leading-relaxed flex">
               <span className="mr-2">•</span>
               <span>{item}</span>
             </li>
