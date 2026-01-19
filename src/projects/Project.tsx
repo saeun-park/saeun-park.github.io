@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { projects } from './ProjectData';
+// import { projects } from './ProjectData';
 import type { ProjectData } from './ProjectData';
 import ProjectModal from './components/ProjectModal';
-import ProjectCard from './components/ProjectCard';
+// import ProjectCard from './components/ProjectCard';
 
 const Project = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(
