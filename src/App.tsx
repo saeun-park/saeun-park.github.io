@@ -7,9 +7,15 @@ import Skills from './skills/Skills';
 import Experience from './experiences/Experience';
 import Project from './projects/Project';
 import Etc from './etc/Etc';
+import ProjectModal from './projects/components/ProjectModal';
+import type { ProjectData } from './projects/ProjectData';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('profile');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<ProjectData | null>(
+    null
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,12 +54,13 @@ const Portfolio = () => {
     const element = document.getElementById(sectionId);
 
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - headerOffset - 20; // -20 for a little extra padding
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
       setActiveSection(sectionId);
     }
@@ -62,10 +69,11 @@ const Portfolio = () => {
   return (
     <div className="relative min-h-screen">
       {/* Content */}
-      <div className="relative z-10">
+      <div className={`relative ${isModalOpen ? 'z-0' : 'z-10'}`}>
         <Header
           activeSection={activeSection}
           onNavigate={scrollToSection}
+          isModalOpen={isModalOpen}
         ></Header>
         <Profile></Profile>
         <main className="max-w-6xl mx-auto px-4 mb-12 space-y-12">
@@ -76,11 +84,18 @@ const Portfolio = () => {
           {' '}
           {/* Subsequent sections */}
           <Experience></Experience>
-          <Project></Project>
+          <Project setSelectedProject={setSelectedProject}></Project>
           <Etc></Etc>
         </main>
         <Footer></Footer>
       </div>
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+          setIsModalOpen={setIsModalOpen}
+        />
+      )}
     </div>
   );
 };

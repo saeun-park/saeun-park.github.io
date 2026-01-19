@@ -1,4 +1,5 @@
 import type { ProjectData } from '../ProjectData';
+import TechStack from '../../skills/components/TechStack';
 
 interface ProjectCardProps {
   project: ProjectData;
@@ -8,21 +9,20 @@ interface ProjectCardProps {
 const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
   return (
     <div
-      className="cursor-pointer rounded-lg border border-gray-300 transition-all duration-300 h-64 p-8 flex flex-col justify-between text-gray-800 hover:scale-105"
+      className="group cursor-pointer rounded-lg bg-gray-100 transition-all duration-300 relative pb-[100%] text-gray-800 hover:scale-105 hover:bg-pink-100"
       onClick={() => onClick(project)}
     >
-      <div>
-        <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-        <p className="text-sm opacity-90 mb-4">{project.period}</p>
-        <div className="flex flex-wrap gap-2">
-          {project.tools.map((tool, idx) => (
-            <span
-              key={idx}
-              className="px-3 py-1 bg-gray-200 rounded-full text-xs text-gray-800"
-            >
-              {tool}
-            </span>
-          ))}
+      <div className="absolute inset-0 p-8 flex flex-col justify-between">
+        <div>
+          <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+          <p className="text-xs opacity-90 mb-3">{project.period}</p>
+          <TechStack
+            techs={project.tools}
+            iconSize="text-base"
+            showNames={false}
+            containerClassName="mt-2"
+          />
+          <p className="text-sm mt-4 leading-relaxed">{project.description}</p>
         </div>
       </div>
     </div>

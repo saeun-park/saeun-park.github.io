@@ -19,9 +19,23 @@ import {
   SiPandas,
   SiNumpy,
   SiJupyter,
+  SiAndroidstudio,
+  SiKotlin,
 } from 'react-icons/si';
 
-const TechStack = () => {
+interface TechStackProps {
+  techs?: string[];
+  iconSize?: string; // e.g., "text-lg", "text-xl"
+  containerClassName?: string;
+  showNames?: boolean;
+}
+
+const TechStack = ({
+  techs,
+  iconSize = 'text-2xl',
+  containerClassName = '',
+  showNames = true,
+}: TechStackProps) => {
   const categories = [
     {
       title: 'Language',
@@ -30,6 +44,7 @@ const TechStack = () => {
         { name: 'R', icon: SiR, color: '#276DC3' },
         { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
         { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
+        { name: 'Kotlin', icon: SiKotlin, color: '#7F52FF' },
       ],
     },
     {
@@ -44,12 +59,12 @@ const TechStack = () => {
       ],
     },
     {
-      title: 'Frontend',
+      title: 'Framework & Backend',
       items: [
         { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
         { name: 'CSS3', icon: SiCss3, color: '#1572B6' },
         { name: 'React', icon: SiReact, color: '#61DAFB' },
-        { name: 'Vue', icon: SiVuedotjs, color: '#4FC08D' },
+        { name: 'Vue.js', icon: SiVuedotjs, color: '#4FC08D' },
         { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
         { name: 'Vite', icon: SiVite, color: '#646CFF' },
       ],
@@ -57,6 +72,7 @@ const TechStack = () => {
     {
       title: 'Tools',
       items: [
+        { name: 'Android Studio', icon: SiAndroidstudio, color: '#3DDC84' },
         { name: 'GitHub', icon: SiGithub, color: '#181717' },
         { name: 'Notion', icon: SiNotion, color: '#000000' },
         { name: 'Figma', icon: SiFigma, color: '#F24E1E' },
@@ -65,6 +81,43 @@ const TechStack = () => {
     },
   ];
 
+  // If a list of techs is provided, filter and display them in a simple grid
+  if (techs) {
+    const techSet = new Set(techs.map((t) => t.toLowerCase()));
+    const allTechs = categories.flatMap((category) => category.items);
+    const filteredTechs = allTechs.filter((tech) =>
+      techSet.has(tech.name.toLowerCase())
+    );
+
+    return (
+      <div
+        className={`flex flex-wrap ${
+          showNames ? 'gap-4' : 'gap-2'
+        } justify-start my-2 ${containerClassName}`}
+      >
+        {filteredTechs.map((tech) => {
+          const Icon = tech.icon;
+          return (
+            <div
+              key={tech.name}
+              className={`flex items-center justify-center bg-gray-100 rounded-md ${
+                showNames ? 'gap-2 px-3 py-2' : 'p-2'
+              }`}
+            >
+              <Icon className={iconSize} style={{ color: tech.color }} />
+              {showNames && (
+                <span className="text-sm text-gray-800 font-medium">
+                  {tech.name}
+                </span>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
+  // Original marquee display
   return (
     <div className="marquee-container overflow-hidden">
       <div className="marquee-content flex items-center gap-8">
