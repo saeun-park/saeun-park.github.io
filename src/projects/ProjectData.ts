@@ -1,3 +1,14 @@
+import toss_mobile from '../assets/images/projects/toss_mobile.png';
+import nohoodorak from '../assets/images/projects/nohoodorak.jpg';
+import nohudorak from '../assets/images/projects/nohudorak.png';
+import finto from '../assets/images/projects/finto.jpg';
+import aimers from '../assets/images/projects/aimers.png';
+import loan from '../assets/images/projects/loan.jpeg';
+import temperature from '../assets/images/projects/temperature.jpeg';
+import price from '../assets/images/projects/price.png';
+import ifood from '../assets/images/projects/ifood.png';
+import ht from '../assets/images/projects/ht.jpeg';
+
 export type ProjectDetail =
   | {
       type: 'text';
@@ -34,7 +45,7 @@ export const projects: ProjectData[] = [
   {
     title: '신분증 진위확인 테스트 앱 기획 및 개발',
     period: '2025.11 - 2025.12',
-    thumbnail: '/src/assets/images/projects/toss_mobile.png',
+    thumbnail: toss_mobile,
     description:
       'TensorFlow Lite 기반의 신분증 위조 탐지 모델을 Android 앱에 통합하여 실제 모바일 환경에서 테스트할 수 있는 애플리케이션을 개발했습니다.',
     tools: ['Android Studio', 'Kotlin'],
@@ -98,7 +109,7 @@ export const projects: ProjectData[] = [
   {
     title: '시니어 맞춤형 노후 설계 플랫폼 기획 및 개발',
     period: '2025.07 - 2025.08',
-    thumbnail: '/src/assets/images/projects/nohoodorak.JPG',
+    thumbnail: nohoodorak,
     description:
       'KB국민은행의 부트캠프에서 국민은행과 연계 가능한 시니어 사용자를 위한 맞춤형 노후 설계 웹앱을 개발했습니다.',
     tools: [
@@ -121,7 +132,7 @@ export const projects: ProjectData[] = [
     details: [
       {
         type: 'image',
-        src: '/src/assets/images/projects/nohudorak.png',
+        src: nohudorak,
       },
       {
         type: 'text',
@@ -189,7 +200,7 @@ export const projects: ProjectData[] = [
   {
     title: '외국인 이주민 맞춤형 금융 멘토링 플랫폼 기획 및 개발',
     period: '2024.12 - 2025.01',
-    thumbnail: '/src/assets/images/projects/finto.jpg',
+    thumbnail: finto,
     description:
       '디지털 금융약자인 외국인 이주민을 위한 멘토링 기반 금융 교육을 지원하는 웹서비스를 개발했습니다.',
     tools: [
@@ -284,7 +295,7 @@ export const projects: ProjectData[] = [
   {
     title: 'MQL 데이터 기반 B2B 영업기회 창출 예측 모델 개발',
     period: '2024.01 - 2024.02',
-    thumbnail: '/src/assets/images/projects/aimers.png',
+    thumbnail: aimers,
     isImportant: true,
     description:
       'LG Aimers 4기 해커톤에서 MQL 고객 데이터를 활용하여 B2B 영업 전환 성공 여부를 예측하는 ML 모델을 개발했습니다.',
@@ -364,7 +375,7 @@ export const projects: ProjectData[] = [
   {
     title: '고객 대출등급 분류 예측 모델 개발',
     period: '2024.01 - 2024.02',
-    thumbnail: '/src/assets/images/projects/loan.jpeg',
+    thumbnail: loan,
     description:
       'DACON AI 해커톤에서 금융 고객 데이터를 활용하여 대출등급(A~G)을 예측하는 다중 분류 ML 모델을 개발했습니다.',
     tools: [
@@ -433,7 +444,7 @@ export const projects: ProjectData[] = [
   {
     title: '서울시 평균 기온 예측 모델 개발',
     period: '2023.12 - 2024.01',
-    thumbnail: '/src/assets/images/projects/temperature.jpeg',
+    thumbnail: temperature,
     description:
       'DACON AI 해커톤에서 1960년부터 2022년까지의 기상 데이터를 활용하여 2023년 서울시 평균기온을 예측하는 시계열 모델을 개발했습니다.',
     tools: ['Python', 'Pandas', 'Prophet', 'Scikit-learn', 'Seaborn'],
@@ -490,7 +501,7 @@ export const projects: ProjectData[] = [
   // ################################ 제주 특산물 가격 예측 모델 개발
   {
     title: '제주 특산물 가격 예측 모델 개발',
-    thumbnail: '/src/assets/images/projects/price.png',
+    thumbnail: price,
     period: '2023.10 - 2023.11',
     description:
       'DACON AI 경진대회에서 제주도 특산물의 가격을 예측하는 시계열 모델을 개발했습니다.',
@@ -550,7 +561,7 @@ export const projects: ProjectData[] = [
   {
     title: '상품 유형별 주요 소비자층 분산분석',
     period: '2023.05 - 2023.06',
-    thumbnail: '/src/assets/images/projects/ifood.png',
+    thumbnail: ifood,
     description:
       'Superstore 데이터를 활용하여 고객 인구통계학적 특성에 따른 일반재/사치재 소비량 차이를 ANOVA로 분석하고 마케팅 전략을 제안했습니다.',
     tools: ['R', 'ggplot2', 'ANOVA', 'Tukey HSD'],
@@ -622,7 +633,7 @@ export const projects: ProjectData[] = [
   {
     title: '현대자동차 vs 테슬라 주가 수익률 및 리스크 비교분석',
     period: '2022.06 - 2022.07',
-    thumbnail: '/src/assets/images/projects/ht.jpeg',
+    thumbnail: ht,
     description:
       'Yahoo Finance API를 활용하여 현대자동차와 테슬라의 5년간 주가 데이터를 수집하고 핵심 투자 지표를 산출하여 비교 분석했습니다.',
     tools: ['Python', 'Pandas', 'yfinance', 'Matplotlib', 'NumPy'],
