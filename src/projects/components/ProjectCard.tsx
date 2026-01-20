@@ -1,6 +1,7 @@
 import type { ProjectData } from '../ProjectData';
 import TechStack from '../../skills/components/TechStack';
 import { FaStar } from 'react-icons/fa'; // Import FaStar
+import { SiGithub } from 'react-icons/si'; // Import SiGithub for GitHub logo
 
 interface ProjectCardProps {
   project: ProjectData;
@@ -10,6 +11,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
   const imageUrl: string | undefined = project.thumbnail;
+  const isGitHubLink = project.link && project.link.includes('github.com');
 
   return (
     <div
@@ -41,11 +43,25 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
         <p className="text-xs text-gray-700 leading-relaxed mb-3 flex-1">
           {project.description}
         </p>
-        <TechStack
-          techs={project.tools}
-          iconSize="text-base"
-          showNames={false}
-        />
+        <div className="flex items-center justify-between mt-auto">
+          <TechStack
+            techs={project.tools}
+            iconSize="text-base"
+            showNames={false}
+          />
+          {isGitHubLink && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()} // Prevent card onClick from firing
+              className="flex items-center gap-1.5 text-github hover:text-gray-700 transition-colors text-sm font-medium"
+            >
+              <SiGithub className="text-lg" />
+              <span>GitHub</span>
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

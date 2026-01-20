@@ -25,6 +25,9 @@ export default {
             fontFamily: {
               montserrat: ['Montserrat', 'sans-serif'],
             },
+            colors: {
+              github: '#24292e',
+            },
           },  },
   plugins: [require('@tailwindcss/aspect-ratio')],
 };
