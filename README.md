@@ -7,7 +7,12 @@ https://saeun-park.github.io
 
 ---
 
-## Portfolio Structure
+<img src="docs/pf1.png" width="700" />
+<img src="docs/pf2.png" width="700" />
+<img src="docs/pf3.png" width="700" />
+<img src="docs/pf4.png" width="700" />
+
+<!-- ## Portfolio Structure
 
 ### 1. Main Page
 
@@ -46,16 +51,16 @@ https://saeun-park.github.io
 
 ### 7. Contact
 
-- 아직 X (추가 예정)
+- 아직 X (추가 예정) -->
 
----
+<!-- ---
 
 ## Tech Stack
 
 - **Vite**
 - **React**
 - **TypeScript**
-- **Tailwind CSS**
+- **Tailwind CSS** -->
 
 ---
 
