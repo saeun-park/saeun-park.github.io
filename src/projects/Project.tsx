@@ -1,36 +1,122 @@
+import { useState, useMemo } from 'react';
 import { projects } from './ProjectData';
 import type { ProjectData } from './ProjectData';
 import ProjectCard from './components/ProjectCard';
+// import { FaStar } from 'react-icons/fa'; // Import FaStar
 
 interface ProjectProps {
   setSelectedProject: (project: ProjectData | null) => void;
 }
 
+const TABS = ['전체', '기획/개발', 'ML 모델링', '데이터 분석'] as const;
+type Tab = (typeof TABS)[number];
+
 const Project = ({ setSelectedProject }: ProjectProps) => {
+  const [activeTab, setActiveTab] = useState<Tab>('전체');
+  const [showImportantOnly, setShowImportantOnly] = useState(false);
+
+  const processedProjects = useMemo(() => {
+    let currentProjects = projects;
+
+    // 1. Filter by category
+    if (activeTab !== '전체') {
+      currentProjects = currentProjects.filter((p) => p.category === activeTab);
+    }
+
+    // 2. Filter by importance (applied after category filter)
+    if (showImportantOnly) {
+      currentProjects = currentProjects.filter((p) => p.isImportant);
+    }
+
+    // Sort by latest date (assuming period is "YYYY.MM - YYYY.MM")
+    const getStartDate = (period: string) => {
+      const startDateString = period.split(' - ')[0];
+      return new Date(startDateString.replace('.', '-'));
+    };
+
+    return currentProjects.sort(
+      (a, b) =>
+        getStartDate(b.period).getTime() - getStartDate(a.period).getTime()
+    );
+  }, [activeTab, showImportantOnly]);
+
   return (
-    <>
-      <section id="projects" className="pb-8">
-        <div>
-          <h2 className="text-4xl text-gray-800 font-bold my-12">PROJECTS</h2>
-          {/* <p className="text-sm text-gray-700">
-            주요 프로젝트의 세부 사항을 확인해보세요.
-          </p> */}
-          <div className="mx-20">
-            <div className="mx-auto max-w-6xl px-4">
-              <div className="grid md:grid-cols-3 gap-8">
-                {projects.map((project, index) => (
-                  <ProjectCard
-                    key={index}
-                    project={project}
-                    onClick={setSelectedProject}
-                  />
-                ))}
-              </div>
-            </div>
+    <section id="projects" className="py-16">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-gray-800 mb-8">PROJECTS</h2>
+
+        <div className="flex flex-col sm:flex-row justify-center items-center mb-8 gap-4 relative">
+          {/* Category Filters (Centrally Aligned) */}
+          <div className="flex-wrap flex justify-center space-x-2 bg-gray-200 p-1 rounded-2xl">
+            {TABS.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-4 py-2 text-sm sm:text-base font-medium rounded-2xl transition-colors duration-300 ${
+                  activeTab === tab
+                    ? 'bg-pink-500 text-white'
+                    : 'text-gray-600 hover:bg-gray-300'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          {/* Important Projects Toggle (Right Aligned) */}
+          <div className="sm:absolute sm:right-0">
+            <label
+              htmlFor="importantToggle"
+              className="flex items-center space-x-2 cursor-pointer text-gray-600 hover:text-pink-500"
+            >
+              <input
+                type="checkbox"
+                id="importantToggle"
+                className="sr-only" // Visually hide the checkbox
+                checked={showImportantOnly}
+                onChange={() => setShowImportantOnly(!showImportantOnly)}
+              />
+              <span
+                className={`w-5 h-5 border-2 rounded ${
+                  showImportantOnly
+                    ? 'border-pink-500 bg-pink-500'
+                    : 'border-gray-400'
+                } flex items-center justify-center`}
+              >
+                {showImportantOnly && (
+                  <svg
+                    className="w-3 h-3 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                )}
+              </span>
+              <span>주요 프로젝트만 보기</span>
+            </label>
           </div>
         </div>
-      </section>
-    </>
+
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
+          {processedProjects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              project={project}
+              onClick={setSelectedProject}
+              layout="wide"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

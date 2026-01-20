@@ -24,13 +24,17 @@ export interface ProjectData {
   teamSize: string;
   role: string;
   details: ProjectDetail[];
+  category: '기획/개발' | 'ML 모델링' | '데이터 분석';
+  thumbnail?: string;
+  isImportant?: boolean;
 }
 
 export const projects: ProjectData[] = [
   // ################################ 신분증 진위확인 테스트 앱 개발
   {
-    title: '신분증 진위확인 테스트 앱 개발',
+    title: '신분증 진위확인 테스트 앱 기획 및 개발',
     period: '2025.11 - 2025.12',
+    thumbnail: '/src/assets/images/projects/toss_mobile.png',
     description:
       'TensorFlow Lite 기반의 신분증 위조 탐지 모델을 Android 앱에 통합하여 실제 모바일 환경에서 테스트할 수 있는 애플리케이션을 개발했습니다.',
     tools: ['Android Studio', 'Kotlin'],
@@ -39,6 +43,8 @@ export const projects: ProjectData[] = [
       '토스 사내 신분증 진위확인 ML 모델을 실제 모바일 환경에서 테스트하기 위한 애플리케이션 개발의 필요성이 대두되어, 자발적으로 업무를 맡아 진행한 프로젝트입니다.',
     teamSize: '1명',
     role: '안드로이드 앱 개발자',
+    category: '기획/개발',
+    isImportant: true,
     details: [
       {
         type: 'text',
@@ -53,10 +59,10 @@ export const projects: ProjectData[] = [
     - ViT (ImageNet 분류): Transformer 모델 구조 학습
     - NSFW (분류): 기본 전처리/후처리 파이프라인 이해`,
       },
-      {
-        type: 'image',
-        src: '/src/assets/images/Toss.jpg',
-      },
+      // {
+      //   type: 'image',
+      //   src: '/src/assets/images/Toss.jpg',
+      // },
       {
         type: 'text',
         title: '기술적 도전과 해결',
@@ -90,8 +96,9 @@ export const projects: ProjectData[] = [
   },
   // ################################ 시니어 맞춤형 노후 설계 서비스 개발
   {
-    title: '시니어 맞춤형 노후 설계 플랫폼 개발',
+    title: '시니어 맞춤형 노후 설계 플랫폼 기획 및 개발',
     period: '2025.07 - 2025.08',
+    thumbnail: '/src/assets/images/projects/nohoodorak.JPG',
     description:
       'KB국민은행의 부트캠프에서 국민은행과 연계 가능한 시니어 사용자를 위한 맞춤형 노후 설계 웹앱을 개발했습니다.',
     tools: [
@@ -108,11 +115,13 @@ export const projects: ProjectData[] = [
     overview:
       '노후도락은 초고령사회 진입에 따라 시니어의 삶의 질과 디지털 격차 해소를 목표로 한 통합 시니어 금융 플랫폼입니다. 자산관리, 증여/상속, 생활편의 등 시니어의 핵심 관심사를 한 곳에서 해결할 수 있도록 설계되었습니다.',
     teamSize: '5명',
+    isImportant: true,
     role: 'PM & 프론트엔드 개발자',
+    category: '기획/개발',
     details: [
       {
         type: 'image',
-        src: '/src/assets/images/nohudorak.png',
+        src: '/src/assets/images/projects/nohudorak.png',
       },
       {
         type: 'text',
@@ -178,8 +187,9 @@ export const projects: ProjectData[] = [
   },
   // ################################ 외국인 이주민 맞춤형 금융 멘토링 플랫폼 개발
   {
-    title: '외국인 이주민 맞춤형 금융 멘토링 플랫폼 개발',
+    title: '외국인 이주민 맞춤형 금융 멘토링 플랫폼 기획 및 개발',
     period: '2024.12 - 2025.01',
+    thumbnail: '/src/assets/images/projects/finto.jpg',
     description:
       '디지털 금융약자인 외국인 이주민을 위한 멘토링 기반 금융 교육을 지원하는 웹서비스를 개발했습니다.',
     tools: [
@@ -197,11 +207,8 @@ export const projects: ProjectData[] = [
       'FinTo는 외국인 이주민이 같은 문화권 선배 이주민 멘토와 1:1 매칭되어 실전 금융 챌린지를 함께 수행하며, 한국 금융 시스템에 성공적으로 정착할 수 있도록 돕는 멘토링 기반 금융 교육 플랫폼입니다. 단순 정보 제공을 넘어 경험 기반의 실행형 학습을 실현하여 실질적인 금융 자립을 촉진합니다.',
     teamSize: '6명',
     role: 'PM & 프론트엔드 개발자',
+    category: '기획/개발',
     details: [
-      // {
-      //   type: 'image',
-      //   src: '/src/assets/images/finto.png',
-      // },
       {
         type: 'text',
         title: '프로젝트 배경',
@@ -277,6 +284,8 @@ export const projects: ProjectData[] = [
   {
     title: 'MQL 데이터 기반 B2B 영업기회 창출 예측 모델 개발',
     period: '2024.01 - 2024.02',
+    thumbnail: '/src/assets/images/projects/aimers.png',
+    isImportant: true,
     description:
       'LG Aimers 4기 해커톤에서 MQL 고객 데이터를 활용하여 B2B 영업 전환 성공 여부를 예측하는 ML 모델을 개발했습니다.',
     tools: [
@@ -292,6 +301,7 @@ export const projects: ProjectData[] = [
       'B2B Marketing에서 MQL(Marketing Qualified Lead) 고객 정보를 활용해 영업 전환 성공 여부를 예측하는 AI 모델을 개발하고, 이를 통해 한정된 영업 인력을 효율적으로 배치하는 것을 목표로 한 프로젝트입니다.',
     teamSize: '4명',
     role: '데이터 분석 및 모델링',
+    category: 'ML 모델링',
     details: [
       {
         type: 'text',
@@ -341,19 +351,20 @@ export const projects: ProjectData[] = [
   - 효율적인 하이퍼파라미터 튜닝: 베이지안 최적화를 통한 탐색 효율 개선과 성능 향상
   - 정교한 결측값 처리 방식: 단순 삭제나 일괄 치환이 아닌, 머신러닝 기반 예측으로 결측값을 대체하여 데이터 손실 최소화`,
       },
-      {
-        type: 'image-gallery',
-        images: [
-          { src: '/src/assets/images/lg_aimers_hackathon_certificate.jpg' },
-          { src: '/src/assets/images/lg_aimers_ai_practice_completion.jpg' },
-        ],
-      },
+      // {
+      //   type: 'image-gallery',
+      //   images: [
+      //     { src: '/src/assets/images/lg_aimers_hackathon_certificate.jpg' },
+      //     { src: '/src/assets/images/lg_aimers_ai_practice_completion.jpg' },
+      //   ],
+      // },
     ],
   },
   // ################################ 고객 대출등급 분류 예측 모델 개발
   {
     title: '고객 대출등급 분류 예측 모델 개발',
     period: '2024.01 - 2024.02',
+    thumbnail: '/src/assets/images/projects/loan.jpeg',
     description:
       'DACON AI 해커톤에서 금융 고객 데이터를 활용하여 대출등급(A~G)을 예측하는 다중 분류 ML 모델을 개발했습니다.',
     tools: [
@@ -370,6 +381,7 @@ export const projects: ProjectData[] = [
       '대출금액, 연간소득, 상환이력 등 고객 금융 정보를 기반으로 대출등급(A~G, 7개 클래스)을 예측하는 분류 모델을 개발하여, 금융사의 신용평가 자동화를 목표로 한 프로젝트입니다.',
     teamSize: '1명',
     role: '데이터 분석 및 모델링 전체',
+    category: 'ML 모델링',
     details: [
       {
         type: 'text',
@@ -421,6 +433,7 @@ export const projects: ProjectData[] = [
   {
     title: '서울시 평균 기온 예측 모델 개발',
     period: '2023.12 - 2024.01',
+    thumbnail: '/src/assets/images/projects/temperature.jpeg',
     description:
       'DACON AI 해커톤에서 1960년부터 2022년까지의 기상 데이터를 활용하여 2023년 서울시 평균기온을 예측하는 시계열 모델을 개발했습니다.',
     tools: ['Python', 'Pandas', 'Prophet', 'Scikit-learn', 'Seaborn'],
@@ -429,6 +442,7 @@ export const projects: ProjectData[] = [
       '1960년부터 2022년까지의 기온, 일교차, 강수량, 평균습도 등 기상 데이터를 분석하여 2023년 1월 1일부터 12월 24일까지(358일)의 평균기온을 예측하는 시계열 예측 프로젝트입니다.',
     teamSize: '1명',
     role: '데이터 분석 및 모델링 전체',
+    category: 'ML 모델링',
     details: [
       {
         type: 'text',
@@ -476,15 +490,17 @@ export const projects: ProjectData[] = [
   // ################################ 제주 특산물 가격 예측 모델 개발
   {
     title: '제주 특산물 가격 예측 모델 개발',
+    thumbnail: '/src/assets/images/projects/price.png',
     period: '2023.10 - 2023.11',
     description:
-      'DACON AI 경진대회에서 제주도 특산물(감귤, 브로콜리, 무, 당근, 양배추)의 가격을 예측하는 시계열 모델을 개발했습니다.',
+      'DACON AI 경진대회에서 제주도 특산물의 가격을 예측하는 시계열 모델을 개발했습니다.',
     tools: ['Python', 'Pandas', 'AutoGluon', 'Scikit-learn', 'pytimekr'],
     link: '',
     overview:
       '2019년부터 2023년 3월까지의 제주 특산물 거래 데이터를 활용하여, 2023년 3월 4일부터 31일까지(28일간)의 품목별 가격(원/kg)을 예측하는 시계열 예측 프로젝트입니다.',
     teamSize: '1명',
     role: '데이터 분석 및 모델링 전체',
+    category: 'ML 모델링',
     details: [
       {
         type: 'text',
@@ -534,6 +550,7 @@ export const projects: ProjectData[] = [
   {
     title: '상품 유형별 주요 소비자층 분산분석',
     period: '2023.05 - 2023.06',
+    thumbnail: '/src/assets/images/projects/ifood.png',
     description:
       'Superstore 데이터를 활용하여 고객 인구통계학적 특성에 따른 일반재/사치재 소비량 차이를 ANOVA로 분석하고 마케팅 전략을 제안했습니다.',
     tools: ['R', 'ggplot2', 'ANOVA', 'Tukey HSD'],
@@ -542,6 +559,7 @@ export const projects: ProjectData[] = [
       'IFood brain team의 Superstore 데이터(2,237건)를 활용하여 고객의 소득, 학력, 연령, 자녀 유무 등 인구통계학적 속성이 일반재와 사치재 소비량에 미치는 영향을 분산분석으로 검정하고, 타겟 마케팅 전략을 도출하는 프로젝트입니다.',
     teamSize: '4명',
     role: '데이터 분석 및 통계 모델링',
+    category: '데이터 분석',
     details: [
       {
         type: 'text',
@@ -604,6 +622,7 @@ export const projects: ProjectData[] = [
   {
     title: '현대자동차 vs 테슬라 주가 수익률 및 리스크 비교분석',
     period: '2022.06 - 2022.07',
+    thumbnail: '/src/assets/images/projects/ht.jpeg',
     description:
       'Yahoo Finance API를 활용하여 현대자동차와 테슬라의 5년간 주가 데이터를 수집하고 핵심 투자 지표를 산출하여 비교 분석했습니다.',
     tools: ['Python', 'Pandas', 'yfinance', 'Matplotlib', 'NumPy'],
@@ -612,6 +631,7 @@ export const projects: ProjectData[] = [
       '국내 대표 자동차 기업(현대차)과 글로벌 EV 선두 기업(테슬라)의 2017~2022년 주가 데이터를 기반으로 수익률 및 리스크 지표를 정량적으로 비교 분석하여, 투자 의사결정을 위한 인사이트를 도출하는 프로젝트입니다.',
     teamSize: '4명',
     role: '데이터 수집 및 수익률/리스크 지표 분석',
+    category: '데이터 분석',
     details: [
       {
         type: 'text',

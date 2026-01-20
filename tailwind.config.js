@@ -26,5 +26,5 @@ export default {
               montserrat: ['Montserrat', 'sans-serif'],
             },
           },  },
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio')],
 };
