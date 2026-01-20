@@ -19,27 +19,30 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       onClick={() => onClick(project)}
     >
       {/* Image */}
+      {/* Image Section */}
       {imageUrl && (
-        <div className="w-full aspect-w-1 aspect-h-1 rounded-t-lg overflow-hidden relative">
-          <img
-            src={imageUrl}
-            alt={project.title}
-            className="w-full h-full object-cover"
-          />
-          {/* {project.isImportant && (
-            <div className="absolute top-2 right-2 bg-yellow-400 p-2 rounded-full shadow-md">
-              <FaStar className="text-white text-lg" />
-            </div>
-          )} */}
+        <div className="w-full rounded-t-lg overflow-hidden relative">
+          {' '}
+          {/* relative를 이쪽으로 이동 */}
+          {/* 1. 이미지 영역 (비율 유지) */}
+          <div className="aspect-w-1 aspect-h-1">
+            <img
+              src={imageUrl}
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          {/* 2. 별 아이콘 영역 (aspect-ratio 영향권 밖으로 분리) */}
           {project.isImportant && (
             <div
-              className="absolute top-2 right-2 bg-yellow-400 rounded-full shadow-md z-10 flex items-center justify-center"
+              className="absolute top-2 right-2 bg-yellow-400 rounded-full shadow-md z-20 flex items-center justify-center"
               style={{
                 width: '32px',
                 height: '32px',
-                minWidth: '32px',
-                minHeight: '32px',
-              }} // CSS 압축 시에도 크기 고정
+                display: 'flex', // 배포 시 layout 깨짐 방지
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
             >
               <FaStar className="text-white" style={{ fontSize: '16px' }} />
             </div>
