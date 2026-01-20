@@ -26,9 +26,22 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
             alt={project.title}
             className="w-full h-full object-cover"
           />
-          {project.isImportant && (
+          {/* {project.isImportant && (
             <div className="absolute top-2 right-2 bg-yellow-400 p-2 rounded-full shadow-md">
               <FaStar className="text-white text-lg" />
+            </div>
+          )} */}
+          {project.isImportant && (
+            <div
+              className="absolute top-2 right-2 bg-yellow-400 rounded-full shadow-md z-10 flex items-center justify-center"
+              style={{
+                width: '32px',
+                height: '32px',
+                minWidth: '32px',
+                minHeight: '32px',
+              }} // CSS 압축 시에도 크기 고정
+            >
+              <FaStar className="text-white" style={{ fontSize: '16px' }} />
             </div>
           )}
         </div>
