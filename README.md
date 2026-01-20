@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Vite + React + TypeScript 기반으로 제작한 개인 포트폴리오 웹사이트입니다.
 
-Currently, two official plugins are available:
+🔗 Live Demo  
+https://saeun-park.github.io
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Portfolio Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Main Page
 
-## Expanding the ESLint configuration
+- 첫 랜딩 화면
+- 소개 한 줄 요약
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2. About Me
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 간단한 자기소개
+- 프로필 사진
+- 교육 및 자격증
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 3. Skills
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- 기술 스택 정리
+- 사용 경험이 있는 라이브러리 / 도구 소개
+- 마퀴 형식으로 구성
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 4. Work Experiences
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- 일 경험
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 5. Projects
+
+- 개인 / 팀 프로젝트 정리
+- 각 프로젝트별:
+  - 프로젝트 개요
+  - 담당 역할
+  - 사용 기술
+  - 구현 기능 요약
+  - 배운 점 / 문제 해결 경험
+
+### 6. Etc
+
+- 이외의 활동들 요약
+
+### 7. Contact
+
+- 아직 X (추가 예정)
+
+---
+
+## Tech Stack
+
+- **Vite**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+
+---
+
+## Deployment Flow (GitHub Pages)
+
+이 포트폴리오는 GitHub Pages를 통해 배포됩니다.
+
+### 배포 절차
+
+```bash
+# 1. 변경사항 커밋 & 푸시
+git push origin main
+
+# 2. 배포
+npm run deploy
 ```

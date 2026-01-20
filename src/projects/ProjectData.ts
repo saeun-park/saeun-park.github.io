@@ -1,6 +1,6 @@
 import toss_mobile from '../assets/images/projects/toss_mobile.png';
 import nohoodorak from '../assets/images/projects/nohoodorak.jpg';
-import nohudorak from '../assets/images/projects/nohudorak.png';
+// import nohudorak from '../assets/images/projects/nohudorak.png';
 import finto from '../assets/images/projects/finto.jpg';
 import aimers from '../assets/images/projects/aimers.png';
 import loan from '../assets/images/projects/loan.jpeg';
@@ -130,10 +130,10 @@ export const projects: ProjectData[] = [
     role: 'PM & 프론트엔드 개발자',
     category: '기획/개발',
     details: [
-      {
-        type: 'image',
-        src: nohudorak,
-      },
+      // {
+      //   type: 'image',
+      //   src: nohudorak,
+      // },
       {
         type: 'text',
         title: '주요 기능',
