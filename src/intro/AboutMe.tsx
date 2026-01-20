@@ -21,12 +21,12 @@ const AboutMe = () => {
 
   return (
     <section id="aboutme">
-      <h2 className="text-4xl text-gray-800 font-bold my-12">ABOUT ME</h2>
-      <div className="mx-20">
+      <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold my-12">ABOUT ME</h2>
+      <div className="px-4 sm:px-8 md:px-20">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-12 mb-12">
           {/* Left: Image */}
           <div className="flex-shrink-0">
-            <img src={ProfileImg} alt="프로필" className="w-[80%] max-w-sm" />
+            <img src={ProfileImg} alt="프로필" className="w-[80%] max-w-sm mx-auto" />
           </div>
           {/* Right: Saeun Park, Intro, Resume Download */}
           <div className="flex-1 text-center md:text-left">
@@ -53,7 +53,7 @@ const AboutMe = () => {
               href={resumePath}
               download={hasResume ? 'resume.pdf' : undefined}
               onClick={handleResumeClick}
-              className={`flex items-center gap-2 ${
+              className={`flex items-center justify-center md:justify-start gap-2 ${
                 hasResume
                   ? 'text-blue-600 hover:underline'
                   : 'text-gray-400 cursor-pointer'
@@ -66,7 +66,7 @@ const AboutMe = () => {
         </div>
 
         {/* Bottom Part: Education and Work Experience */}
-        <div className="grid md:grid-cols-2 gap-12 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
           {/* Left: Education */}
           <div>
             <h3 className="text-2xl font-bold text-gray-800 mb-6">EDUCATION</h3>

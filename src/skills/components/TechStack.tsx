@@ -129,7 +129,7 @@ const TechStack = ({
                 key={tech.name}
                 className="flex flex-col items-center justify-center flex-shrink-0 mr-12"
               >
-                <Icon className="text-8xl mb-2" style={{ color: tech.color }} />
+                <Icon className="text-6xl sm:text-7xl md:text-8xl mb-2" style={{ color: tech.color }} />
                 <span className=" text-gray-700 font-medium">{tech.name}</span>
               </div>
             );
@@ -144,7 +144,7 @@ const TechStack = ({
                 key={`${tech.name}-duplicate`} // Unique key for duplicates
                 className="flex flex-col items-center justify-center flex-shrink-0 mr-12"
               >
-                <Icon className="text-8xl mb-2" style={{ color: tech.color }} />
+                <Icon className="text-6xl sm:text-7xl md:text-8xl mb-2" style={{ color: tech.color }} />
                 <span className=" text-gray-700 font-medium">{tech.name}</span>
               </div>
             );

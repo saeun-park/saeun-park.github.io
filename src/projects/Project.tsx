@@ -45,8 +45,8 @@ const Project = ({ setSelectedProject }: ProjectProps) => {
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-gray-800 mb-8">PROJECTS</h2>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center mb-8 gap-4 relative">
-          {/* Category Filters (Centrally Aligned) */}
+        <div className="flex flex-wrap justify-center sm:justify-between items-center mb-8 gap-4">
+          {/* Category Filters */}
           <div className="flex-wrap flex justify-center space-x-2 bg-gray-200 p-1 rounded-2xl">
             {TABS.map((tab) => (
               <button
@@ -63,49 +63,47 @@ const Project = ({ setSelectedProject }: ProjectProps) => {
             ))}
           </div>
 
-          {/* Important Projects Toggle (Right Aligned) */}
-          <div className="sm:absolute sm:right-0">
-            <label
-              htmlFor="importantToggle"
-              className="flex items-center space-x-2 cursor-pointer text-gray-600 hover:text-pink-500"
+          {/* Important Projects Toggle */}
+          <label
+            htmlFor="importantToggle"
+            className="flex items-center space-x-2 cursor-pointer text-gray-600 hover:text-pink-500"
+          >
+            <input
+              type="checkbox"
+              id="importantToggle"
+              className="sr-only"
+              checked={showImportantOnly}
+              onChange={() => setShowImportantOnly(!showImportantOnly)}
+            />
+            <span
+              className={`w-5 h-5 border-2 rounded ${
+                showImportantOnly
+                  ? 'border-pink-500 bg-pink-500'
+                  : 'border-gray-400'
+              } flex items-center justify-center`}
             >
-              <input
-                type="checkbox"
-                id="importantToggle"
-                className="sr-only" // Visually hide the checkbox
-                checked={showImportantOnly}
-                onChange={() => setShowImportantOnly(!showImportantOnly)}
-              />
-              <span
-                className={`w-5 h-5 border-2 rounded ${
-                  showImportantOnly
-                    ? 'border-pink-500 bg-pink-500'
-                    : 'border-gray-400'
-                } flex items-center justify-center`}
-              >
-                {showImportantOnly && (
-                  <svg
-                    className="w-3 h-3 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"
-                    ></path>
-                  </svg>
-                )}
-              </span>
-              <span>주요 프로젝트만 보기</span>
-            </label>
-          </div>
+              {showImportantOnly && (
+                <svg
+                  className="w-3 h-3 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              )}
+            </span>
+            <span>주요 프로젝트만 보기</span>
+          </label>
         </div>
 
-        <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {processedProjects.map((project) => (
             <ProjectCard
               key={project.title}

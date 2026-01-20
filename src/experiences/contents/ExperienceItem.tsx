@@ -16,7 +16,7 @@ const ExperienceItem = ({
   logo,
 }: ExperienceItemProps) => {
   return (
-    <div className="flex gap-24 items-start">
+    <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
       {/* 왼쪽: 로고 */}
       <div className="flex-shrink-0">
         <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-200 shadow-md">
