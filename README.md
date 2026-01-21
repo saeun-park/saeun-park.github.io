@@ -4,8 +4,6 @@
 
 Vite + React + TypeScript 기반으로 제작한 개인 포트폴리오 웹사이트입니다.
 
-🔗 Live Demo  
-https://saeun-park.github.io
 
 ---
 
