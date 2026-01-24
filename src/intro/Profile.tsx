@@ -28,11 +28,11 @@ const Profile = () => {
       {/* Introductory Text */}
       <div className="absolute bottom-[30%] left-[10%] text-left w-full max-w-6xl mx-auto px-6">
         <p className="text-xl font-extralight leading-loose text-gray-800 ">
-          안녕하세요, 기획과 데이터를 바탕으로 문제를 해결하고, 개발로 결과를
-          만들어내는 박사은입니다.
+          안녕하세요, 데이터와 기획으로 문제를 정의하고, 개발로 실행 가능한
+          결과를 만드는 박사은입니다.
           <br />
-          서비스를 만드는 데서 끝내지 않고, 실제 사용되는 상황까지 고려해
-          구현합니다.
+          반복되는 과정은 자동화하고, 누구나 이해할 수 있도록 문서화하며, 실사용
+          환경까지 고려해 구현합니다.
         </p>
       </div>
     </section>

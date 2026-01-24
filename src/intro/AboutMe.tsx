@@ -21,12 +21,18 @@ const AboutMe = () => {
 
   return (
     <section id="aboutme">
-      <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold my-12">ABOUT ME</h2>
+      <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold my-12">
+        ABOUT ME
+      </h2>
       <div className="px-4 sm:px-8 md:px-20">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-12 mb-12">
           {/* Left: Image */}
           <div className="flex-shrink-0">
-            <img src={ProfileImg} alt="프로필" className="w-[80%] max-w-sm mx-auto" />
+            <img
+              src={ProfileImg}
+              alt="프로필"
+              className="w-[80%] max-w-sm mx-auto"
+            />
           </div>
           {/* Right: Saeun Park, Intro, Resume Download */}
           <div className="flex-1 text-center md:text-left">
@@ -34,19 +40,22 @@ const AboutMe = () => {
               Saeun Park
             </h3>
             <p className="text-base text-gray-700 leading-relaxed mb-6">
-              공공기관, 금융권, IT기업 등 서로 다른 환경에서 기획부터 데이터
-              분석, 그리고 개발까지 경험하며 IT 업무의 전체 흐름을 이해해
-              왔습니다. 특정 역할에 국한되기보다, 서비스가 기획되고 데이터로
-              검증되며 실제 시스템으로 구현되는 과정을 직접 경험하는 것이 IT
-              인재로 성장하는 데 중요한 과정이라고 느꼈습니다.
+              공공기관, 금융권, IT기업을 거치며 실무에서의 기획과 개발을
+              경험하고, 데이터를 다루며 IT 서비스의 전체 사이클을
+              이해해왔습니다. '기획된 서비스가 데이터로 검증되고 실제 시스템으로
+              구현되는 과정' 전체를 경험하는 것이 더 나은 IT 인재로 성장하는
+              핵심이라고 믿습니다.
               <br />
               <br />
-              새로운 업무를 맡을 때는 기능 구현보다 먼저 업무의 목적과 맥락을
-              이해하려 노력하며, 복잡한 문제일수록 핵심 요소를 나누어 단계적으로
-              접근합니다.
+              새로운 업무를 맡으면 기능 구현보다 먼저 '왜 필요한가'를 이해하려
+              노력하고, 복잡한 문제는 핵심 요소로 나누어 단계적으로 접근합니다.
+              또한 반복 작업은 자동화하고, 이를 명확히 문서화해 팀원 누구나
+              활용할 수 있도록 만드는 것을 중요하게 생각합니다.
               <br />
-              또한 결과물을 한 번에 완성하기보다 반복적인 수정과 피드백을 통해
-              실제 사용 환경에 맞게 다듬는 방식을 선호합니다.
+              <br />
+              완벽한 결과물을 한 번에 만들기보다, 빠른 프로토타입과 반복적인
+              개선을 통해 실제 사용 환경에 맞춰 정교하게 다듬어가는 방식을
+              선호합니다.
             </p>
             {/* Resume Download Link */}
             <a
