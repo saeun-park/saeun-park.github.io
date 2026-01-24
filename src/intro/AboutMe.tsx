@@ -88,7 +88,7 @@ const AboutMe = () => {
               </h3>
             </Fade>
             <Fade triggerOnce direction="up" duration={1000}>
-              <ul className="space-y-4 text-gray-700 font-light">
+              <ul className="space-y-4 text-gray-700 font-normal">
                 {educationItems.map((item, index) => (
                   <EducationItem
                     key={index}
@@ -107,7 +107,7 @@ const AboutMe = () => {
               </h3>
             </Fade>
             <Fade triggerOnce direction="up" duration={1000}>
-              <ul className="space-y-4 text-gray-700 font-light">
+              <ul className="space-y-4 text-gray-700 font-normal">
                 {certificates.map((cert, index) => (
                   <CertificateItem
                     key={index}

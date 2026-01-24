@@ -80,7 +80,7 @@ const Profile = () => {
       {/* Introductory Text (생략) */}
       <div className="absolute bottom-[30%] left-[10%] text-left w-full max-w-6xl mx-auto px-6">
         <Fade triggerOnce direction="up" duration={1000}>
-          <p className="text-xl font-extralight leading-loose text-gray-800 ">
+          <p className="text-xl leading-loose text-gray-600 font-normal ">
             안녕하세요, 데이터와 기획으로 문제를 정의하고, 개발로 실행 가능한
             결과를 만드는 박사은입니다.
             <br />
