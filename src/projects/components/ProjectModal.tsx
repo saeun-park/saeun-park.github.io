@@ -3,6 +3,71 @@ import { useEffect, useState } from 'react';
 import type { ProjectData, ProjectDetail } from '../ProjectData';
 import TechStack from '../../skills/components/TechStack';
 
+const ImageCarousel = ({
+  images,
+}: {
+  images: { src: string; alt?: string }[];
+}) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  if (!images || images.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="relative w-full max-w-full mx-auto my-4">
+      <img
+        src={images[currentImageIndex].src}
+        alt={images[currentImageIndex].alt || 'Project Image'}
+        className="w-full object-contain"
+        style={{ maxHeight: '500px' }}
+      />
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={goToPrevious}
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full ml-2 hover:bg-opacity-75 transition-all"
+            aria-label="Previous image"
+          >
+            &#10094;
+          </button>
+          <button
+            onClick={goToNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full mr-2 hover:bg-opacity-75 transition-all"
+            aria-label="Next image"
+          >
+            &#10095;
+          </button>
+        </>
+      )}
+      {images.length > 1 && (
+        <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
+          {images.map((_, index) => (
+            <span
+              key={index}
+              className={`block w-2 h-2 rounded-full ${
+                index === currentImageIndex ? 'bg-white' : 'bg-gray-400'
+              }`}
+            ></span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
 interface ProjectModalProps {
   project: ProjectData;
   onClose: () => void;
@@ -47,7 +112,7 @@ const ProjectModal = ({
             <h4 className="text-lg font-medium text-pink-500 mb-2">
               {detail.title}
             </h4>
-            <p className="text-sm leading-loose text-gray-800 whitespace-pre-line">
+            <p className="text-sm leading-loose text-gray-800 whitespace-pre-wrap">
               {detail.description}
             </p>
           </div>
@@ -58,23 +123,36 @@ const ProjectModal = ({
             key={index}
             src={detail.src}
             alt={detail.alt || 'Project Image'}
-            className="w-full rounded-lg my-4"
+            className="w-full my-4"
           />
         );
       case 'image-gallery':
         return (
-          <div key={index} className="flex gap-4">
+          <div key={index}>
+            <ImageCarousel images={detail.images || []} />
+          </div>
+        );
+      case 'image-grid':
+        return (
+          <div
+            key={index}
+            className="flex flex-col md:flex-row gap-2 my-4 justify-center items-center"
+          >
             {(detail.images || []).map((image, imgIndex) => (
-              <img
+              <div
                 key={imgIndex}
-                src={image.src}
-                alt={image.alt || 'Project Image'}
-                className="w-1/2 rounded-lg my-4"
-              />
+                className="flex justify-center w-full md:w-auto"
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt || 'Project Image'}
+                  className="w-auto max-w-full md:max-w-[400px] max-h-80 object-contain"
+                />
+              </div>
             ))}
           </div>
         );
-      default:{
+      default: {
         return null;
       }
     }
