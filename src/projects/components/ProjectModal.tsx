@@ -33,6 +33,7 @@ const ImageCarousel = ({
         alt={images[currentImageIndex].alt || 'Project Image'}
         className="w-full object-contain"
         style={{ maxHeight: '500px' }}
+        loading="lazy"
       />
       {images.length > 1 && (
         <>
@@ -124,6 +125,7 @@ const ProjectModal = ({
             src={detail.src}
             alt={detail.alt || 'Project Image'}
             className="w-full my-4"
+            loading="lazy"
           />
         );
       case 'image-gallery':
@@ -147,6 +149,7 @@ const ProjectModal = ({
                   src={image.src}
                   alt={image.alt || 'Project Image'}
                   className="w-auto max-w-full md:max-w-[400px] max-h-80 object-contain"
+                  loading="lazy"
                 />
               </div>
             ))}
