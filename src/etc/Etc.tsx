@@ -14,7 +14,7 @@ const Etc = () => {
 
   return (
     <section id="etc" className="pb-32">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4">
         <Fade triggerOnce direction="up" duration={1000}>
           <div className="flex items-center gap-4 mb-16">
             <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold">
