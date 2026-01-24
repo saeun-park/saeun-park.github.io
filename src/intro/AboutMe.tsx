@@ -9,23 +9,16 @@ import { certificates, educationItems } from './AboutMeData'; // Import data
 
 const AboutMe = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // const resumePath = '/path/to/your/resume.pdf'; // Placeholder for actual resume path
-  // const hasResume = resumePath !== '/path/to/your/resume.pdf'; // Check if resume path is set
-
-  // const handleResumeClick = (e: React.MouseEvent) => {
-  //   if (!hasResume) {
-  //     e.preventDefault(); // Prevent default link behavior
-  //     setIsModalOpen(true);
-  //   }
-  //   // If hasResume is true, the link will handle the download
-  // };
 
   return (
     <section id="aboutme" className="pb-8">
       <Fade triggerOnce direction="up" duration={1000}>
-        <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold my-12">
-          ABOUT ME
-        </h2>
+        <div className="flex items-center gap-4 mt-12 mb-16">
+          <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold">
+            ABOUT ME.
+          </h2>
+          <div className="h-[2px] flex-grow bg-gray-200 mt-2"></div>
+        </div>
       </Fade>
       <div className="px-4 sm:px-8 md:px-20">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-12 mb-12">

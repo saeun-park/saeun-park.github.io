@@ -18,10 +18,10 @@ export const experiences: ExperienceData[] = [
     period: '2025.09 - 2025.12',
     months: '3 months',
     description: [
-      '신분증 및 사업자등록증 OCR/KIE 모델 학습을 위한 데이터 구축 및 품질 검수 수행',
-      '이미지 내 객체를 Bounding Box로 정의하고 텍스트 및 필드 단위 Annotation 진행',
       'Python 기반 이미지 크롤링·전처리 자동화 및 라벨링 플랫폼 업로드 파이프라인 구축',
       '위조 신분증 탐지를 위한 보안 취약점 분석 및 모델 고도화 개선안 제시',
+      '신분증 및 사업자등록증 OCR/KIE 모델 학습을 위한 데이터 구축 및 품질 검수 수행',
+      '이미지 내 객체를 Bounding Box로 정의하고 텍스트 및 필드 단위 Annotation 진행',
       'Android Studio 환경에서 TFLite 모델 검증 앱을 개발하고 실제 디바이스 성능 테스트 수행',
     ],
     logo: TossLogo,

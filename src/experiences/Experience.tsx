@@ -6,11 +6,14 @@ const Experience = () => {
   return (
     <section id="experience" className="pb-8">
       <div>
-      <Fade triggerOnce direction="up" duration={1000}>
-        <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold my-12">
-          WORK EXPERIENCES
-        </h2>
-      </Fade>
+        <Fade triggerOnce direction="up" duration={1000}>
+          <div className="flex items-center gap-4 mt-12 mb-16">
+            <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold">
+              WORK EXPERIENCES.
+            </h2>
+            <div className="h-[2px] flex-grow bg-gray-200 mt-2"></div>
+          </div>
+        </Fade>
         <div className="px-4 sm:px-8 md:px-20">
           <div className="space-y-20">
             {experiences.map((exp, index) => (

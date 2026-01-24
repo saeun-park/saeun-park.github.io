@@ -44,9 +44,12 @@ const Project = ({ setSelectedProject }: ProjectProps) => {
   return (
     <section id="projects" className="pb-8">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold my-12">
-          PROJECTS
-        </h2>
+        <div className="flex items-center gap-4 mt-12 mb-16">
+          <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold">
+            PROJECTS.
+          </h2>
+          <div className="h-[2px] flex-grow bg-gray-200 mt-2"></div>
+        </div>
 
         {/* 상단 필터 영역 */}
         <div className="relative mb-12 flex items-center justify-center">
