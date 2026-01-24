@@ -13,7 +13,7 @@ const Etc = () => {
   };
 
   return (
-    <section id="etc" className="pb-32 px-4">
+    <section id="etc" className="pb-32">
       <div className="max-w-5xl mx-auto">
         <Fade triggerOnce direction="up" duration={1000}>
           <div className="flex items-center gap-4 mb-16">
@@ -24,7 +24,7 @@ const Etc = () => {
           </div>
         </Fade>
 
-        <div className="relative">
+        <div className="relative px-4 sm:px-8 md:px-20">
           <div className="space-y-4">
             {etcActivities.map((activity, index) => (
               <Fade
