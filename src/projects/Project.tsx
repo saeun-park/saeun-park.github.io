@@ -1,3 +1,4 @@
+import { Fade } from 'react-awesome-reveal';
 import { useState, useMemo } from 'react';
 import { projects } from './ProjectData';
 import type { ProjectData } from './ProjectData';
@@ -41,9 +42,11 @@ const Project = ({ setSelectedProject }: ProjectProps) => {
   }, [activeTab, showImportantOnly]);
 
   return (
-    <section id="projects" className="py-16">
+    <section id="projects" className="pb-8">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">PROJECTS</h2>
+        <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold my-12">
+          PROJECTS
+        </h2>
 
         {/* 상단 필터 영역 */}
         <div className="relative mb-12 flex items-center justify-center">
@@ -107,12 +110,18 @@ const Project = ({ setSelectedProject }: ProjectProps) => {
 
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {processedProjects.map((project) => (
-            <ProjectCard
+            <Fade
               key={project.title}
-              project={project}
-              onClick={setSelectedProject}
-              layout="wide"
-            />
+              triggerOnce
+              direction="up"
+              duration={1000}
+            >
+              <ProjectCard
+                project={project}
+                onClick={setSelectedProject}
+                layout="wide"
+              />
+            </Fade>
           ))}
         </div>
       </div>

@@ -1,14 +1,21 @@
+import { Fade } from 'react-awesome-reveal';
 import { etcActivities } from './EtcData';
 import EtcItem from './EtcItem';
 
 const Etc = () => {
   return (
-    <section id="etc" className="py-16">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">Etc</h2>
-        <div className="space-y-2">
+    <section id="etc" className="pb-20">
+      <div>
+      <Fade triggerOnce direction="up" duration={1000}>
+        <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold my-12">
+          Etc
+        </h2>
+      </Fade>
+        <div className="space-y-2 px-4 sm:px-8 md:px-20">
           {etcActivities.map((activity, index) => (
-            <EtcItem key={index} activity={activity} />
+            <Fade key={index} triggerOnce direction="up" duration={1000}>
+              <EtcItem activity={activity} />
+            </Fade>
           ))}
         </div>
       </div>

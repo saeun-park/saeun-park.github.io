@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Header from './layout/Header';
-import Footer from './layout/Footer';
 import Profile from './intro/Profile';
 import AboutMe from './intro/AboutMe';
 import Skills from './skills/Skills';
 import Experience from './experiences/Experience';
 import Project from './projects/Project';
 import Etc from './etc/Etc';
+import Contact from './contact/Contact';
 import ProjectModal from './projects/components/ProjectModal';
 import type { ProjectData } from './projects/ProjectData';
+// import { Fade } from 'react-awesome-reveal';
+import { smoothScrollTo } from './utils/scrollUtils';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('profile');
@@ -16,53 +18,71 @@ const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(
     null
   );
+  const scrollLockTimeout = useRef<number | null>(null);
+
+  const handleScroll = useCallback(() => {
+    if (scrollLockTimeout.current) {
+      return;
+    }
+
+    const sections = [
+      'profile',
+      'aboutme',
+      'skills',
+      'projects',
+      'experience',
+      'etc',
+      'contact',
+    ];
+    const header = document.getElementById('main-header');
+    const headerOffset = header ? header.offsetHeight : 0;
+    const scrollPosition = window.scrollY + headerOffset + 1;
+
+    let currentSection = '';
+
+    for (const sectionId of sections) {
+      const element = document.getElementById(sectionId);
+      if (element && element.offsetTop <= scrollPosition) {
+        currentSection = sectionId;
+      } else {
+        break;
+      }
+    }
+
+    if (activeSection !== currentSection && currentSection !== '') {
+      setActiveSection(currentSection);
+    }
+  }, [activeSection]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = [
-        'profile',
-        'aboutme',
-        'skills',
-        'projects',
-        'experience',
-        'etc',
-      ];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   const scrollToSection = (sectionId: string) => {
     const header = document.getElementById('main-header');
-    const headerOffset = header ? header.offsetHeight : 0; // Get header height
+    const headerOffset = header ? header.offsetHeight : 0;
     const element = document.getElementById(sectionId);
 
     if (element) {
+      setActiveSection(sectionId);
+
+      if (scrollLockTimeout.current) {
+        clearTimeout(scrollLockTimeout.current);
+      }
+      scrollLockTimeout.current = setTimeout(() => {
+        scrollLockTimeout.current = null;
+      }, 1000);
+
       const elementPosition =
         element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - headerOffset - 20; // -20 for a little extra padding
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-      setActiveSection(sectionId);
+      if (sectionId === 'contact') {
+        smoothScrollTo(elementPosition, 800);
+      } else {
+        const offsetPosition = elementPosition - headerOffset - 20;
+        smoothScrollTo(offsetPosition, 800);
+      }
     }
   };
 
@@ -76,7 +96,7 @@ const Portfolio = () => {
           isModalOpen={isModalOpen}
         ></Header>
         <Profile></Profile>
-        <main className="max-w-6xl mx-auto px-4 mb-12 space-y-12">
+        <main className="max-w-6xl mx-auto px-4 space-y-12">
           <AboutMe></AboutMe>
         </main>
         <Skills></Skills> {/* Full width skills section */}
@@ -85,9 +105,9 @@ const Portfolio = () => {
           {/* Subsequent sections */}
           <Experience></Experience>
           <Project setSelectedProject={setSelectedProject}></Project>
-          <Etc></Etc>
+          <Etc></Etc>{' '}
         </main>
-        <Footer></Footer>
+        <Contact></Contact>
       </div>
       {selectedProject && (
         <ProjectModal
