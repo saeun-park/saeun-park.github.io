@@ -1252,7 +1252,7 @@ Error generating stack: `+a.message+`
   • 다양한 촬영 조건(조명, 각도)에서 안정적으로 동작하도록 개선`},{type:"text",title:"프로젝트 성과",description:`• ML 팀에 실제 모바일 환경 테스트 도구 제공
 • 다양한 촬영 조건에서의 모델 성능 데이터 수집 가능
 • 프로토타입 단계에서 실사용 이슈 조기 발견 및 피드백 제공
-• 4가지 타입의 ML 모델(분류, Transformer, 객체 탐지) 통합 경험 확보`}]},{title:"시니어 맞춤형 노후 설계 플랫폼 기획 및 개발",period:"2024.07 - 2024.08",thumbnail:Qm,description:"KB국민은행 부트캠프에서 초고령사회 시니어의 자산관리, 증여/상속, 생활편의를 통합 지원하는 웹앱을 PM 겸 프론트엔드 개발자로 기획·개발했습니다.",tools:["Vue.js","TypeScript","Pinia","TailwindCSS","Storybook","Spring","MyBatis","MySQL"],link:"https://github.com/jejugom",overview:"초고령사회 진입에 따른 시니어의 디지털 격차 해소와 통합 자산 관리 니즈를 해결하기 위해, 자산관리·증여/상속·생활편의 기능을 하나의 플랫폼에서 제공하는 시니어 친화적 금융 서비스를 기획하고 개발했습니다.",teamSize:"6명",isImportant:!0,role:"PM & 프론트엔드 개발자",category:"기획/개발",details:[{type:"text",title:"프로젝트 배경 및 목표",description:`• 초고령사회 진입으로 시니어의 금융 니즈 증가하나 디지털 접근성은 낮음
+• 4가지 타입의 ML 모델(분류, Transformer, 객체 탐지) 통합 경험 확보`}]},{title:"시니어 맞춤형 노후 설계 플랫폼 기획 및 개발",period:"2025.07 - 2025.08",thumbnail:Qm,description:"KB국민은행 부트캠프에서 초고령사회 시니어의 자산관리, 증여/상속, 생활편의를 통합 지원하는 웹앱을 PM 겸 프론트엔드 개발자로 기획·개발했습니다.",tools:["Vue.js","TypeScript","Pinia","TailwindCSS","Storybook","Spring","MyBatis","MySQL","Figma"],link:"https://github.com/jejugom",overview:"초고령사회 진입에 따른 시니어의 디지털 격차 해소와 통합 자산 관리 니즈를 해결하기 위해, 자산관리·증여/상속·생활편의 기능을 하나의 플랫폼에서 제공하는 시니어 친화적 금융 서비스를 기획하고 개발했습니다.",teamSize:"6명",isImportant:!0,role:"PM & 프론트엔드 개발자",category:"기획/개발",details:[{type:"text",title:"프로젝트 배경 및 목표",description:`• 초고령사회 진입으로 시니어의 금융 니즈 증가하나 디지털 접근성은 낮음
 • 자산관리, 증여/상속, 생활편의 서비스가 분산되어 있어 통합 플랫폼 필요
 • 시니어도 쉽게 사용할 수 있는 직관적 UI/UX와 맞춤형 금융 서비스 제공 목표`},{type:"text",title:"주요 기능",description:""},{type:"image-gallery",images:[{src:Fm,alt:"서비스 시작 화면"},{src:Im,alt:"자산 관리 화면"},{src:Pm,alt:"증여/상속 시뮬레이션 화면"},{src:t6,alt:"생활 편의 서비스 화면"}]},{type:"text",title:"담당 역할",description:`[기능 개발]
 • 증여/상속 시뮬레이션 로직 설계 및 구현  
@@ -1326,7 +1326,7 @@ Error generating stack: `+a.message+`
 • 최종 모델 F1-score 약 0.76 달성`},{type:"text",title:"프로젝트 성과",description:`• 최종 상위 6.6%의 성과 달성
 • 범주별 전환율 기반 파생변수 생성으로 모델 성능 크게 향상
 • 앙상블 기법과 베이지안 최적화를 활용한 체계적인 모델 개선 프로세스 구축
-• ML 기반 결측값 처리로 데이터 손실 최소화 및 예측 정확도 향상`}]},{title:"고객 대출등급 분류 예측 모델 개발",period:"2024.01 - 2024.02",thumbnail:Jm,description:"DACON AI 해커톤에서 금융 고객 데이터를 활용하여 대출등급(A~G)을 예측하는 다중 분류 ML 모델을 개발했습니다.",tools:["Python","Pandas","NumPy","Scikit-learn","CatBoost","Seaborn","imbalanced-learn"],link:"",overview:"대출금액, 연간소득, 상환이력 등 고객 금융 정보를 기반으로 대출등급(A~G, 7개 클래스)을 예측하는 분류 모델을 개발하여, 금융사의 신용평가 자동화를 목표로 한 프로젝트입니다.",teamSize:"1명",role:"데이터 분석 및 모델링 전체",category:"데이터 분석",details:[{type:"text",title:"프로젝트 배경 및 목표",description:`• 대출금액, 대출기간, 근로기간, 연간소득 등 14개 고객 금융 피처 활용
+• ML 기반 결측값 처리로 데이터 손실 최소화 및 예측 정확도 향상`}]},{title:"고객 대출등급 분류 예측 모델 개발",period:"2024.01 - 2024.02",thumbnail:Jm,description:"DACON AI 해커톤에서 금융 고객 데이터를 활용하여 대출등급(A~G)을 예측하는 다중 분류 ML 모델을 개발했습니다.",tools:["Python","Scikit-learn","CatBoost","Seaborn","imbalanced-learn"],link:"",overview:"대출금액, 연간소득, 상환이력 등 고객 금융 정보를 기반으로 대출등급(A~G, 7개 클래스)을 예측하는 분류 모델을 개발하여, 금융사의 신용평가 자동화를 목표로 한 프로젝트입니다.",teamSize:"1명",role:"데이터 분석 및 모델링 전체",category:"데이터 분석",details:[{type:"text",title:"프로젝트 배경 및 목표",description:`• 대출금액, 대출기간, 근로기간, 연간소득 등 14개 고객 금융 피처 활용
 • 타겟변수: 대출등급 A~G (7개 클래스)
 • 클래스 불균형 문제 존재 (C, B등급 다수, F, G등급 소수)`},{type:"text",title:"EDA 및 인사이트 도출",description:`• Countplot으로 대출등급 분포 확인 및 클래스 불균형 식별
 • '부채_대비_소득_비율' 컬럼에서 9999 이상치 탐지
@@ -1346,7 +1346,7 @@ Error generating stack: `+a.message+`
 [파생변수 설계의 중요성]
 • 대회 종료 후 상위권 분석 결과, '상환비율'(총상환원금/대출금액) 단일 파생변수로 0.8점대 → 0.95점 이상 성능 향상 가능 확인
 • 신용평가 도메인에서 '상환능력'이 핵심 지표임을 사후 학습
-• 향후 프로젝트에서는 EDA 단계에서 도메인 지식을 적극 활용하여 의미 있는 파생변수 설계 필요성 인식`}]},{title:"서울시 평균 기온 예측 모델 개발",period:"2023.12 - 2024.01",thumbnail:km,description:"DACON AI 해커톤에서 1960년부터 2022년까지의 기상 데이터를 활용하여 2023년 서울시 평균기온을 예측하는 시계열 모델을 개발했습니다.",tools:["Python","Pandas","Prophet","Scikit-learn","Seaborn"],link:"",overview:"1960년부터 2022년까지의 기온, 일교차, 강수량, 평균습도 등 기상 데이터를 분석하여 2023년 1월 1일부터 12월 24일까지(358일)의 평균기온을 예측하는 시계열 예측 프로젝트입니다.",teamSize:"1명",role:"데이터 분석 및 모델링 전체",category:"데이터 분석",details:[{type:"text",title:"프로젝트 배경 및 목표",description:`• 학습 데이터: 1960-01-01 ~ 2022-12-31 (약 63년간 기상 데이터)
+• 향후 프로젝트에서는 EDA 단계에서 도메인 지식을 적극 활용하여 의미 있는 파생변수 설계 필요성 인식`}]},{title:"서울시 평균 기온 예측 모델 개발",period:"2023.12 - 2024.01",thumbnail:km,description:"DACON AI 해커톤에서 1960년부터 2022년까지의 기상 데이터를 활용하여 2023년 서울시 평균기온을 예측하는 시계열 모델을 개발했습니다.",tools:["Python","Scikit-learn","Seaborn"],link:"",overview:"1960년부터 2022년까지의 기온, 일교차, 강수량, 평균습도 등 기상 데이터를 분석하여 2023년 1월 1일부터 12월 24일까지(358일)의 평균기온을 예측하는 시계열 예측 프로젝트입니다.",teamSize:"1명",role:"데이터 분석 및 모델링 전체",category:"데이터 분석",details:[{type:"text",title:"프로젝트 배경 및 목표",description:`• 학습 데이터: 1960-01-01 ~ 2022-12-31 (약 63년간 기상 데이터)
 • 예측 대상: 2023-01-01 ~ 2023-12-24 (358일간 평균기온)
 • 피처: 최고기온, 최저기온, 일교차, 강수량, 평균습도, 평균풍속, 일조합, 일사합, 일조율`},{type:"text",title:"EDA 및 인사이트 도출",description:`• Correlation Heatmap으로 날씨 변수 간 높은 상관관계 확인
 • Boxplot으로 계절별 평균기온 분포 차이 시각화
@@ -1365,7 +1365,7 @@ Error generating stack: `+a.message+`
 [향후 개선 방향 도출]
 • 결측값 처리: backward fill 대신 선형 보간(interpolate) 적용 시 성능 개선 가능
 • 하이퍼파라미터 확장: holidays_prior_scale, n_changepoints, seasonality_mode 등 추가 튜닝 여지 존재
-• 앙상블 기법 적용 및 재현성을 위한 시드 고정 필요성 확인`}]},{title:"제주 특산물 가격 예측 모델 개발",thumbnail:$m,period:"2023.10 - 2023.11",description:"DACON AI 경진대회에서 제주도 특산물의 가격을 예측하는 시계열 모델을 개발했습니다.",tools:["Python","Pandas","AutoGluon","Scikit-learn","pytimekr"],link:"",overview:"2019년부터 2023년 3월까지의 제주 특산물 거래 데이터를 활용하여, 2023년 3월 4일부터 31일까지(28일간)의 품목별 가격(원/kg)을 예측하는 시계열 예측 프로젝트입니다.",teamSize:"1명",role:"데이터 분석 및 모델링 전체",category:"데이터 분석",details:[{type:"text",title:"프로젝트 배경 및 목표",description:`• 예측 대상: 제주 특산물 5종 (감귤, 브로콜리, 무, 당근, 양배추)
+• 앙상블 기법 적용 및 재현성을 위한 시드 고정 필요성 확인`}]},{title:"제주 특산물 가격 예측 모델 개발",thumbnail:$m,period:"2023.10 - 2023.11",description:"DACON AI 경진대회에서 제주도 특산물의 가격을 예측하는 시계열 모델을 개발했습니다.",tools:["Python","Scikit-learn","pytimekr"],link:"",overview:"2019년부터 2023년 3월까지의 제주 특산물 거래 데이터를 활용하여, 2023년 3월 4일부터 31일까지(28일간)의 품목별 가격(원/kg)을 예측하는 시계열 예측 프로젝트입니다.",teamSize:"1명",role:"데이터 분석 및 모델링 전체",category:"데이터 분석",details:[{type:"text",title:"프로젝트 배경 및 목표",description:`• 예측 대상: 제주 특산물 5종 (감귤, 브로콜리, 무, 당근, 양배추)
 • 학습 데이터: 2019-01-01 ~ 2023-03-03 거래 데이터
 • 예측 기간: 2023-03-04 ~ 2023-03-31 (28일)
 • 목표: 특산물 가격 예측을 통한 안정적이고 효율적인 수급 관리`},{type:"text",title:"EDA 및 인사이트 도출",description:`• 감귤을 중심으로 가격 추세 패턴 분석
