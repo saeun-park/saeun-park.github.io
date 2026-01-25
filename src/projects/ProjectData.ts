@@ -123,7 +123,7 @@ export const projects: ProjectData[] = [
   // ################################ 시니어 맞춤형 노후 설계 서비스 개발
   {
     title: '시니어 맞춤형 노후 설계 플랫폼 기획 및 개발',
-    period: '2024.07 - 2024.08',
+    period: '2025.07 - 2025.08',
     thumbnail: nohoodorak,
     description:
       'KB국민은행 부트캠프에서 초고령사회 시니어의 자산관리, 증여/상속, 생활편의를 통합 지원하는 웹앱을 PM 겸 프론트엔드 개발자로 기획·개발했습니다.',
@@ -136,6 +136,7 @@ export const projects: ProjectData[] = [
       'Spring',
       'MyBatis',
       'MySQL',
+      'Figma',
     ],
     link: 'https://github.com/jejugom',
     overview:
@@ -369,8 +370,6 @@ export const projects: ProjectData[] = [
       'DACON AI 해커톤에서 금융 고객 데이터를 활용하여 대출등급(A~G)을 예측하는 다중 분류 ML 모델을 개발했습니다.',
     tools: [
       'Python',
-      'Pandas',
-      'NumPy',
       'Scikit-learn',
       'CatBoost',
       'Seaborn',
@@ -459,7 +458,7 @@ export const projects: ProjectData[] = [
     thumbnail: temperature,
     description:
       'DACON AI 해커톤에서 1960년부터 2022년까지의 기상 데이터를 활용하여 2023년 서울시 평균기온을 예측하는 시계열 모델을 개발했습니다.',
-    tools: ['Python', 'Pandas', 'Prophet', 'Scikit-learn', 'Seaborn'],
+    tools: ['Python', 'Scikit-learn', 'Seaborn'],
     link: '',
     overview:
       '1960년부터 2022년까지의 기온, 일교차, 강수량, 평균습도 등 기상 데이터를 분석하여 2023년 1월 1일부터 12월 24일까지(358일)의 평균기온을 예측하는 시계열 예측 프로젝트입니다.',
@@ -520,7 +519,7 @@ export const projects: ProjectData[] = [
     period: '2023.10 - 2023.11',
     description:
       'DACON AI 경진대회에서 제주도 특산물의 가격을 예측하는 시계열 모델을 개발했습니다.',
-    tools: ['Python', 'Pandas', 'AutoGluon', 'Scikit-learn', 'pytimekr'],
+    tools: ['Python', 'Scikit-learn', 'pytimekr'],
     link: '',
     overview:
       '2019년부터 2023년 3월까지의 제주 특산물 거래 데이터를 활용하여, 2023년 3월 4일부터 31일까지(28일간)의 품목별 가격(원/kg)을 예측하는 시계열 예측 프로젝트입니다.',
