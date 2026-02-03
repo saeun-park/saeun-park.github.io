@@ -7,14 +7,13 @@ html {
 }
 
 .marquee-container {
-  /* Ensure container doesn't affect document flow with width */
   width: 100%;
 }
 
 .marquee-content {
-  animation: marquee 50s linear infinite; /* Adjust speed as needed */
-  white-space: nowrap; /* Prevent items from wrapping */
-  width: max-content; /* Ensure content takes enough width for animation */
+  animation: marquee 50s linear infinite;
+  white-space: nowrap;
+  width: max-content;
 }
 
 @keyframes marquee {
@@ -22,8 +21,6 @@ html {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(
-      -50%
-    ); /* Move half the content width for seamless loop */
+    transform: translateX(-50%);
   }
 }

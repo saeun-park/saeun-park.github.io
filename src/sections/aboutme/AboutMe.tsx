@@ -1,7 +1,7 @@
 import { Fade } from 'react-awesome-reveal';
 import ProfileImg from '../../assets/images/saeunpark.png';
-import CertificateItem from './components/CertificateItem';
-import EducationItem from './components/EducationItem';
+import CertificateItem from './CertificateItem';
+import EducationItem from './EducationItem';
 import { certificates, educationItems } from '../../data/AboutMeData';
 
 const AboutMe = () => {

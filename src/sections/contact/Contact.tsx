@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import Footer from '../../layout/Footer';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
-import AnimatedTitle from './components/AnimatedTitle';
+import AnimatedTypingText from '../../components/AnimatedTypingText';
 import ContactDetails from './ContactItem';
 
 import { CONTACT_INFO, CONTACT_TITLE } from '../../data/ContactData';
@@ -19,7 +19,7 @@ const Contact = () => {
       <div className="flex-grow flex flex-col justify-center px-8 md:px-24 lg:px-40">
         <div className="mb-20 md:mb-32">
           {/* TITLE */}
-          <AnimatedTitle title={CONTACT_TITLE} isVisible={isVisible} />
+          <AnimatedTypingText text={CONTACT_TITLE} as="h2" className="text-4xl md:text-6xl text-left" isVisible={isVisible} delayPerChar={0.1} />
         </div>
         <ContactDetails
           contactInfo={CONTACT_INFO} // DATA

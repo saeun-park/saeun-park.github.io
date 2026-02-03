@@ -1,4 +1,4 @@
-import { techCategories } from '../../../data/TechStackData';
+import { techCategories } from '../../data/TechStackData';
 
 interface TechStackProps {
   techs?: string[];
@@ -7,7 +7,7 @@ interface TechStackProps {
   showNames?: boolean;
 }
 
-const TechStack = ({
+const TechStackItem = ({
   techs,
   iconSize = 'text-2xl',
   containerClassName = '',
@@ -90,4 +90,4 @@ const TechStack = ({
   );
 };
 
-export default TechStack;
+export default TechStackItem;

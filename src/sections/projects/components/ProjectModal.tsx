@@ -2,7 +2,7 @@ import React from 'react';
 import { X, ExternalLink } from 'lucide-react';
 import useModalState from '../../../hooks/useModalState';
 import type { ProjectData } from '../../../data/ProjectData';
-import TechStack from '../../skills/components/TechStack';
+import TechStackItem from '../../techstack/TechStackItem';
 import ProjectDetailRenderer from './ProjectDetailRenderer';
 
 interface ProjectModalProps {
@@ -61,7 +61,7 @@ const ProjectModal = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <Label>기술 스택</Label>
-              <TechStack techs={project.tools} />
+              <TechStackItem techs={project.tools} />
             </div>
             {project.link && (
               <div>

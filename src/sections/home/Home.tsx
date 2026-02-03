@@ -1,23 +1,12 @@
 import { Fade } from 'react-awesome-reveal';
 import { ChevronDown } from 'lucide-react';
-import { smoothScrollTo } from '../utils/scrollUtils';
+import AnimatedTypingText from '../../components/AnimatedTypingText';
 
-const Profile = () => {
-  const title = "SAEUN'S PORTFOLIO";
-  const words = title.split(' ');
+interface ProfileProps {
+  scrollToSection: (sectionId: string) => void;
+}
 
-  const scrollToNext = () => {
-    const nextSection = document.getElementById('aboutme');
-    const header = document.getElementById('main-header');
-    const headerOffset = header ? header.offsetHeight : 0;
-    if (nextSection) {
-      const elementPosition =
-        nextSection.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - headerOffset - 20;
-      smoothScrollTo(offsetPosition, 800);
-    }
-  };
-
+const Profile = ({ scrollToSection }: ProfileProps) => {
   return (
     <section
       id="profile"
@@ -38,41 +27,12 @@ const Profile = () => {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-20 h-full flex flex-col justify-center">
         <div className="mb-12">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-montserrat font-bold leading-tight text-gray-800">
-            {words.map((word, wordIndex) => (
-              <span key={wordIndex} className="block">
-                {word.split('').map((char, charIndex) => {
-                  const globalIndex =
-                    wordIndex === 0
-                      ? charIndex
-                      : words[0].length + charIndex + 1;
-                  return (
-                    <span
-                      key={charIndex}
-                      className="opacity-0 animate-typing-dot"
-                      style={{
-                        animationDelay: `${globalIndex * 0.15}s`,
-                        animationFillMode: 'forwards',
-                      }}
-                    >
-                      {char}
-                    </span>
-                  );
-                })}
-                {wordIndex === words.length - 1 && (
-                  <span
-                    className="opacity-0 animate-typing-dot text-pink-600"
-                    style={{
-                      animationDelay: `${title.length * 0.15}s`,
-                      animationFillMode: 'forwards',
-                    }}
-                  >
-                    .
-                  </span>
-                )}
-              </span>
-            ))}
-          </h1>
+          <AnimatedTypingText
+            text="SAEUN'S PORTFOLIO"
+            as="h1"
+            className="text-5xl md:text-7xl lg:text-8xl"
+            delayPerChar={0.15}
+          />
         </div>
 
         <div className="w-full">
@@ -94,7 +54,7 @@ const Profile = () => {
 
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30">
         <button
-          onClick={scrollToNext}
+          onClick={() => scrollToSection('aboutme')}
           className="flex flex-col items-center gap-2 group text-gray-500"
         >
           <span className="text-xs font-montserrat tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">

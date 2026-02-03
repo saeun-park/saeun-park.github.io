@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Header from './layout/Header';
-import Profile from './sections/MainPage';
+import Profile from './sections/home/Home';
 import AboutMe from './sections/aboutme/AboutMe';
-import Skills from './sections/skills/Skills';
+import TechStack from './sections/techstack/TechStack';
 import Experience from './sections/experiences/Experience';
 import Project from './sections/projects/Project';
 import Etc from './sections/etc/Etc';
@@ -39,11 +39,11 @@ const Portfolio = () => {
           onNavigate={scrollToSection}
           isModalOpen={isModalOpen}
         ></Header>
-        <Profile></Profile>
+        <Profile scrollToSection={scrollToSection}></Profile>
         <main className="max-w-6xl mx-auto px-4 space-y-12">
           <AboutMe></AboutMe>
         </main>
-        <Skills></Skills>
+        <TechStack></TechStack>
         <main className="max-w-6xl mx-auto px-4 mb-12 space-y-12">
           {' '}
           <Experience></Experience>

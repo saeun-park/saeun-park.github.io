@@ -1,5 +1,5 @@
 import type { ProjectData } from '../../../data/ProjectData';
-import TechStack from '../../skills/components/TechStack';
+import TechStackItem from '../../techstack/TechStackItem';
 import { FaStar } from 'react-icons/fa';
 import { SiGithub } from 'react-icons/si';
 
@@ -57,7 +57,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
           {project.description}
         </p>
         <div className="flex items-center justify-between mt-auto">
-          <TechStack
+          <TechStackItem
             techs={project.tools}
             iconSize="text-base"
             showNames={false}
