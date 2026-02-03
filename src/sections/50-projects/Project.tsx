@@ -1,7 +1,7 @@
 import { Fade } from 'react-awesome-reveal';
 import { useState, useMemo } from 'react';
-import { projects } from '../../data/ProjectData';
-import type { ProjectData } from '../../data/ProjectData';
+import { projects } from '../../data/50-ProjectData';
+import type { ProjectData } from '../../data/50-ProjectData';
 import ProjectCard from './components/ProjectCard';
 
 interface ProjectProps {

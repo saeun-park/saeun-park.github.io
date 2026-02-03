@@ -1,10 +1,6 @@
-import { Mail, Github, Linkedin } from 'lucide-react';
-// import React from 'react';
-import type { ReactElement } from 'react';
-
 export interface ContactItem {
   name: string;
-  icon: ReactElement;
+  icon: string;
   link: string;
   text: string;
 }
@@ -12,19 +8,19 @@ export interface ContactItem {
 export const CONTACT_INFO: ContactItem[] = [
   {
     name: 'Email',
-    icon: <Mail size={24} />,
+    icon: 'Mail',
     link: 'mailto:saeunnpark@gmail.com',
     text: 'saeunnpark@gmail.com',
   },
   {
     name: 'GitHub',
-    icon: <Github size={24} />,
+    icon: 'Github',
     link: 'https://github.com/saeun-park',
     text: 'https://github.com/saeun-park',
   },
   {
     name: 'LinkedIn',
-    icon: <Linkedin size={24} />,
+    icon: 'Linkedin',
     link: 'https://www.linkedin.com/in/saeunn-park/',
     text: 'https://www.linkedin.com/in/saeunn-park/',
   },

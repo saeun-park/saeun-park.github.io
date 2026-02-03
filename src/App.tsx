@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import Header from './layout/Header';
-import Profile from './sections/home/Home';
-import AboutMe from './sections/aboutme/AboutMe';
-import TechStack from './sections/techstack/TechStack';
-import Experience from './sections/experiences/Experience';
-import Project from './sections/projects/Project';
-import Etc from './sections/etc/Etc';
-import Contact from './sections/contact/Contact';
-import ProjectModal from './sections/projects/components/ProjectModal';
-import type { ProjectData } from './data/ProjectData';
+import {
+  Home,
+  AboutMe,
+  TechStack,
+  Experience,
+  Project,
+  Etc,
+  Contact,
+} from './sections';
+import ProjectModal from './sections/50-projects/components/ProjectModal';
+import type { ProjectData } from './data/50-ProjectData';
 import useScrollNavigation from './hooks/useScrollNavigation';
 
 const Portfolio = () => {
@@ -39,7 +41,7 @@ const Portfolio = () => {
           onNavigate={scrollToSection}
           isModalOpen={isModalOpen}
         ></Header>
-        <Profile scrollToSection={scrollToSection}></Profile>
+        <Home scrollToSection={scrollToSection}></Home>
         <main className="max-w-6xl mx-auto px-4 space-y-12">
           <AboutMe></AboutMe>
         </main>

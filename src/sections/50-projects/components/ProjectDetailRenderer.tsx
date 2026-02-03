@@ -1,5 +1,5 @@
 import React from 'react';
-import type { ProjectDetail } from '../../../data/ProjectData';
+import type { ProjectDetail } from '../../../data/50-ProjectData';
 import ImageCarousel from './ImageCarousel';
 interface ProjectDetailRendererProps {
   detail: ProjectDetail;

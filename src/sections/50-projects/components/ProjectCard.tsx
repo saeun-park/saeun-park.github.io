@@ -1,5 +1,5 @@
-import type { ProjectData } from '../../../data/ProjectData';
-import TechStackItem from '../../techstack/TechStackItem';
+import type { ProjectData } from '../../../data/50-ProjectData';
+import TechStackItem from '../../30-techstack/TechStackItem';
 import { FaStar } from 'react-icons/fa';
 import { SiGithub } from 'react-icons/si';
 

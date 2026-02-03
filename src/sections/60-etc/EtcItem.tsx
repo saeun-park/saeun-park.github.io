@@ -1,5 +1,5 @@
 import { ChevronDown, Link as LinkIcon } from 'lucide-react';
-import type { EtcActivity } from '../../data/EtcData';
+import type { EtcActivity } from '../../data/60-EtcData';
 
 interface EtcItemProps {
   activity: EtcActivity;

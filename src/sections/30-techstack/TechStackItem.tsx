@@ -1,4 +1,4 @@
-import { techCategories } from '../../data/TechStackData';
+import { techCategories } from '../../data/30-TechStackData';
 
 interface TechStackProps {
   techs?: string[];

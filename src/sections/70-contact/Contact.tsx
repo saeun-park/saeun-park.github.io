@@ -4,7 +4,7 @@ import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 import AnimatedTypingText from '../../components/AnimatedTypingText';
 import ContactDetails from './ContactItem';
 
-import { CONTACT_INFO, CONTACT_TITLE } from '../../data/ContactData';
+import { CONTACT_INFO, CONTACT_TITLE } from '../../data/70-ContactData';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null!);
@@ -19,7 +19,13 @@ const Contact = () => {
       <div className="flex-grow flex flex-col justify-center px-8 md:px-24 lg:px-40">
         <div className="mb-20 md:mb-32">
           {/* TITLE */}
-          <AnimatedTypingText text={CONTACT_TITLE} as="h2" className="text-4xl md:text-6xl text-left" isVisible={isVisible} delayPerChar={0.1} />
+          <AnimatedTypingText
+            text={CONTACT_TITLE}
+            as="h2"
+            className="text-4xl md:text-6xl text-left"
+            isVisible={isVisible}
+            delayPerChar={0.1}
+          />
         </div>
         <ContactDetails
           contactInfo={CONTACT_INFO} // DATA

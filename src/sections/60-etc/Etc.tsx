@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
-import { etcActivities } from '../../data/EtcData';
+import { etcActivities } from '../../data/60-EtcData';
 import EtcItem from './EtcItem';
 
 const Etc = () => {

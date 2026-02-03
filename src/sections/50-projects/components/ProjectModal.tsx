@@ -1,8 +1,8 @@
 import React from 'react';
 import { X, ExternalLink } from 'lucide-react';
 import useModalState from '../../../hooks/useModalState';
-import type { ProjectData } from '../../../data/ProjectData';
-import TechStackItem from '../../techstack/TechStackItem';
+import type { ProjectData } from '../../../data/50-ProjectData';
+import TechStackItem from '../../30-techstack/TechStackItem';
 import ProjectDetailRenderer from './ProjectDetailRenderer';
 
 interface ProjectModalProps {

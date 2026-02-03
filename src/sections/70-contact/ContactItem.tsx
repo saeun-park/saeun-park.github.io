@@ -1,9 +1,9 @@
-// ContactDetails.tsx 내부의 인터페이스
-import type { ReactElement } from 'react';
+import { Mail, Github, Linkedin } from 'lucide-react';
+import React from 'react';
 
 interface ContactInfo {
   name: string;
-  icon: ReactElement;
+  icon: string;
   link: string;
   text: string;
 }
@@ -19,6 +19,12 @@ const ContactDetails: React.FC<ContactDetailsProps> = ({
   isVisible,
   animationDelay,
 }) => {
+  const IconMap: { [key: string]: React.ElementType } = {
+    Mail: Mail,
+    Github: Github,
+    Linkedin: Linkedin,
+  };
+
   return (
     <div
       className={`flex flex-row gap-8 md:gap-16 items-start opacity-0 ${
@@ -46,7 +52,9 @@ const ContactDetails: React.FC<ContactDetailsProps> = ({
             className="group flex items-center gap-4 text-base md:text-lg text-gray-300 hover:text-pink-400 transition-all duration-300"
           >
             <span className="p-2 bg-gray-700 rounded-full group-hover:bg-gray-600 transition-colors">
-              {item.icon}
+              {item.icon && IconMap[item.icon]
+                ? React.createElement(IconMap[item.icon], { size: 24 })
+                : null}
             </span>
             <span className="border-b border-transparent group-hover:border-pink-400">
               {item.text}

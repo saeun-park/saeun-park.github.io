@@ -1,6 +1,7 @@
 import { Fade } from 'react-awesome-reveal';
 import { ChevronDown } from 'lucide-react';
 import AnimatedTypingText from '../../components/AnimatedTypingText';
+import { HOME_TITLE, HOME_INTRO_TEXTS } from '../../data/10-HomeData';
 
 interface ProfileProps {
   scrollToSection: (sectionId: string) => void;
@@ -28,7 +29,7 @@ const Profile = ({ scrollToSection }: ProfileProps) => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-20 h-full flex flex-col justify-center">
         <div className="mb-12">
           <AnimatedTypingText
-            text="SAEUN'S PORTFOLIO"
+            text={HOME_TITLE}
             as="h1"
             className="text-5xl md:text-7xl lg:text-8xl"
             delayPerChar={0.15}
@@ -38,15 +39,11 @@ const Profile = ({ scrollToSection }: ProfileProps) => {
         <div className="w-full">
           <Fade triggerOnce direction="up" duration={1000} delay={1500}>
             <div className="text-lg md:text-base lg:text-xl leading-relaxed md:leading-[2] text-gray-600 font-normal break-keep">
-              <span className="lg:block mb-4">
-                안녕하세요, 데이터와 기획으로 문제를 정의하고, 개발로 실행
-                가능한 결과를 만드는 박사은입니다.
-              </span>
-
-              <span className="lg:block">
-                반복되는 과정은 자동화하고, 누구나 이해할 수 있도록 문서화하며,
-                실사용 환경까지 고려해 구현합니다.
-              </span>
+              {HOME_INTRO_TEXTS.map((text, index) => (
+                <span key={index} className="lg:block mb-4">
+                  {text}
+                </span>
+              ))}
             </div>
           </Fade>
         </div>

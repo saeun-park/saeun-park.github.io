@@ -1,6 +1,6 @@
 import { Fade } from 'react-awesome-reveal';
 import ExperienceItem from './ExperienceItem';
-import { experiences } from '../../data/ExperienceData';
+import { experiences } from '../../data/40-ExperienceData';
 
 const Experience = () => {
   return (
