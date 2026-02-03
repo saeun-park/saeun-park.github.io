@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react'; // Import icons for hamburger menu
+import { Menu, X } from 'lucide-react'; // 반응형의 햄버거 메뉴 아이콘
 
 interface HeaderProps {
   activeSection: string;
@@ -21,16 +21,15 @@ const Header = ({ activeSection, onNavigate, isModalOpen }: HeaderProps) => {
 
   const handleLinkClick = (section: string) => {
     onNavigate(section);
-    setIsMenuOpen(false); // Close menu on navigation
+    setIsMenuOpen(false);
   };
 
-  // Sections with dark backgrounds that require white header text
   const darkSections = ['contact'];
   const isDarkSection = darkSections.includes(activeSection);
 
   const textColor = isDarkSection ? 'text-white' : 'text-gray-600';
   const mobileIconColor = isDarkSection ? 'text-white' : 'text-gray-700';
-  const mobileTextColor = 'text-gray-800'; // Mobile menu is always on a light background
+  const mobileTextColor = 'text-gray-800';
   const isProfile = activeSection === 'profile';
 
   return (
@@ -41,19 +40,16 @@ const Header = ({ activeSection, onNavigate, isModalOpen }: HeaderProps) => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-        {/* Logo/Brand */}
         <div
           className={`text-lg font-semibold cursor-pointer transition-colors hover:text-pink-600 
-            ${
-              isProfile ? 'text-pink-600' : textColor
-            } // profile일 때 핑크색 고정
+            ${isProfile ? 'text-pink-600' : textColor}
             ${isModalOpen ? 'opacity-50' : ''}`}
           onClick={() => handleLinkClick('profile')}
         >
           @SAEUNNPARK
         </div>
 
-        {/* Desktop Navigation */}
+        {/* 데스크탑 네비게이션 */}
         <div
           className={`hidden md:flex gap-8 ${isModalOpen ? 'opacity-50' : ''}`}
         >
@@ -75,7 +71,7 @@ const Header = ({ activeSection, onNavigate, isModalOpen }: HeaderProps) => {
           })}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* 모바일 햄버거 메뉴 */}
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? (
@@ -87,7 +83,7 @@ const Header = ({ activeSection, onNavigate, isModalOpen }: HeaderProps) => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* 모바일 메뉴 */}
       {isMenuOpen && (
         <div className="md:hidden bg-white/80 backdrop-blur-md absolute top-full left-0 w-full flex flex-col items-center gap-6 py-8">
           {navLinks.map((item) => {
@@ -99,8 +95,7 @@ const Header = ({ activeSection, onNavigate, isModalOpen }: HeaderProps) => {
                 className={`text-2xl font-light transition-colors hover:text-pink-600 ${
                   activeSection === sectionId
                     ? 'text-pink-600 font-bold'
-                    : // Mobile menu text color remains consistent as it's on a light background
-                      mobileTextColor
+                    : mobileTextColor
                 }`}
               >
                 {item}

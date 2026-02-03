@@ -1,0 +1,48 @@
+interface ExperienceItemProps {
+  company: string;
+  period: string;
+  description: string[];
+  logo: string;
+}
+
+const ExperienceItem = ({
+  company,
+  period,
+  description,
+  logo,
+}: ExperienceItemProps) => {
+  return (
+    <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
+      {/* 왼쪽: 로고 */}
+      <div className="flex-shrink-0">
+        <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-200 shadow-md">
+          <img
+            src={logo}
+            alt={`${company} 로고`}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      {/* 오른쪽: 정보 */}
+      <div className="flex-1">
+        <div className="flex items-center gap-3 mb-2">
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">{company}</h3>
+        </div>
+        <p className=" text-gray-700 mb-3">{period}</p>
+        <div className="flex gap-3 flex-wrap"></div>
+
+        <ul className="space-y-2">
+          {description.map((item, index) => (
+            <li key={index} className=" text-gray-700 leading-relaxed flex">
+              <span className="mr-2">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default ExperienceItem;
