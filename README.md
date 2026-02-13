@@ -24,7 +24,7 @@
 ```bash
 # 1. 변경사항 커밋 & 푸시
 git add .
-git commit -m "Update portfolio"
+git commit -m "Update Portfolio"
 git push origin main
 
 # 2. GitHub Pages에 배포
