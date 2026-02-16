@@ -44,10 +44,3 @@ npm run dev
 # 빌드
 npm run build
 ```
-
----
-
-## Contact
-
-- **GitHub**: [@saeun-park](https://github.com/saeun-park)
-- **Email**: saeunnpark@gmail.com
