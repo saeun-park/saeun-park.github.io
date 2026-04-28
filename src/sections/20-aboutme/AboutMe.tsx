@@ -1,6 +1,7 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import ProfileImg from '../../assets/images/saeunpark.png';
+// import ProfileImg2 from '../../assets/images/saeun.PNG';
 import CertificateItem from './CertificateItem';
 import EducationItem from './EducationItem';
 import {
@@ -27,7 +28,7 @@ const AboutMe = () => {
             <img
               src={ProfileImg}
               alt="프로필"
-              className="w-[70%] max-w-sm mx-auto"
+              className="w-[80%] max-w-sm mx-auto"
             />
           </div>
           {/* 오른쪽 */}
