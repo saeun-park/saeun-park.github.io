@@ -11,7 +11,7 @@ import {
 
 const AboutMe = () => {
   return (
-    <section id="aboutme" className="pb-8">
+    <section id="aboutme" className="py-8">
       <Fade triggerOnce direction="up" duration={1000}>
         <div className="flex items-center gap-4 mt-12 mb-16">
           <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold">
@@ -27,13 +27,13 @@ const AboutMe = () => {
             <img
               src={ProfileImg}
               alt="프로필"
-              className="w-[80%] max-w-sm mx-auto"
+              className="w-[70%] max-w-sm mx-auto"
             />
           </div>
           {/* 오른쪽 */}
           <div className="flex-1 text-center md:text-left">
             <Fade triggerOnce direction="up" duration={1000}>
-              <h3 className="text-xl font-light text-pink-600 mb-4">
+              <h3 className="text-xl font-light text-custom-gold mb-4">
                 Saeun Park
               </h3>
             </Fade>

@@ -10,14 +10,12 @@ export interface ExperienceData {
 
 export const experiences: ExperienceData[] = [
   {
-    company: '비바리퍼블리카(토스) Vision Service Assistant',
+    company: '비바리퍼블리카 Vision Service Assistant',
     period: '2025.09 - 2025.12',
     description: [
-      'Python 기반 이미지 크롤링·전처리 자동화 및 라벨링 플랫폼 업로드 파이프라인 구축',
-      '위조 신분증 탐지를 위한 보안 취약점 분석 및 모델 고도화 개선안 제시',
-      '신분증 및 사업자등록증 OCR/KIE 모델 학습을 위한 데이터 구축 및 품질 검수 수행',
-      '이미지 내 객체를 Bounding Box로 정의하고 텍스트 및 필드 단위 Annotation 진행',
-      'Android Studio 환경에서 TFLite 모델 검증 앱을 개발하고 실제 디바이스 성능 테스트 수행',
+      '라벨링 과정에서 위조 이미지가 정상 데이터로 포함되는 취약점을 발견하고, 위조 데이터 3,000장을 직접 설계·생성',
+      '데이터 수집부터 전처리, 라벨링까지 이어지는 파이프라인을 자동화하여 학습데이터 구축 효율 향상',
+      'ML 모델을 모바일 환경에서 검증할 수 있는 안드로이드 앱을 개발하여 실제 사용 환경 기반 성능 확인 지원',
     ],
     logo: TossLogo,
   },
@@ -25,11 +23,9 @@ export const experiences: ExperienceData[] = [
     company: '통계청 통계정보플랫폼과 인턴',
     period: '2024.05 - 2024.08',
     description: [
-      '챗봇 개발을 위한 AI 학습데이터 구축 및 라벨링 업무 수행',
-      'PDF를 Machine Readable 형태로 변환, YOLOv5 기반 표·셀 단위 라벨링 수행',
-      '총 770문서·7만 페이지·4.4만 표·3만 수식 처리로 AI 학습데이터 구축 과정 실무 경험 보유',
-      '모델 생성 annotation 검수·큐레이션, Segmentation 기법으로 표 구조 재현 및 효율 향상',
-      '구축 데이터 기반 학습 모델, annotation 97% · 표 인식 98% mAP 성능 달성에 기여',
+      '770개 통계 보고서를 분석 가능한 기계가독형 데이터로 변환',
+      'YOLOv5 기반 표·수식 인식 결과를 검수·보정하여 데이터 품질 향상',
+      '문서의 h1~h4 계층 구조를 설계하고 JSON으로 변환해 4.4만 개 표, 3만 개 수식을 체계적으로 구조화',
     ],
     logo: StatisticsLogo,
   },

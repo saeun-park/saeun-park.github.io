@@ -29,12 +29,12 @@ const EtcItem = ({ activity, isOpen, onToggle }: EtcItemProps) => {
           <div className="flex items-center gap-3">
             <div
               className={`w-2 h-2 rounded-full transition-colors ${
-                isOpen ? 'bg-pink-500' : 'bg-gray-300 group-hover:bg-pink-400'
+                isOpen ? 'bg-custom-gold' : 'bg-gray-300 group-hover:bg-custom-gold'
               }`}
             ></div>
             <p
               className={`text-lg transition-colors ${
-                isOpen ? 'text-pink-600 font-semibold' : 'text-gray-700'
+                isOpen ? 'text-custom-gold font-semibold' : 'text-gray-700'
               }`}
             >
               {activity.title}
@@ -44,7 +44,7 @@ const EtcItem = ({ activity, isOpen, onToggle }: EtcItemProps) => {
         {hasDetails && (
           <div
             className={`p-1 rounded-full transition-colors ${
-              isOpen ? 'bg-pink-100 text-pink-600' : 'text-gray-400'
+              isOpen ? 'bg-custom-gold/20 text-custom-gold' : 'text-gray-400'
             }`}
           >
             <ChevronDown
@@ -68,21 +68,21 @@ const EtcItem = ({ activity, isOpen, onToggle }: EtcItemProps) => {
             <div className="hidden sm:block sm:w-[11.2rem] shrink-0"></div>
 
             {/* 핑크색 선 내부 컨테이너 */}
-            <div className="flex-grow flex flex-col gap-6 border-l-2 border-pink-100 ml-1 pl-6 py-2">
+            <div className="flex-grow flex flex-col gap-6 border-l-2 border-custom-gold/20 ml-1 pl-6 py-2">
               {/* 링크 카드 */}
               {activity.link && (
                 <a
                   href={activity.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-white border-gray-100 rounded-xl hover:border-pink-200 border-2 hover:shadow-md transition-all group/link w-full max-w-2xl"
+                  className="flex items-center gap-4 p-4 bg-white border-gray-100 rounded-xl hover:border-custom-gold/30 border-2 hover:shadow-md transition-all group/link w-full max-w-2xl"
                 >
-                  <div className="w-12 h-12 bg-pink-50 rounded-lg flex items-center justify-center shrink-0 group-hover/link:bg-pink-100 transition-colors">
-                    <LinkIcon size={20} className="text-pink-500" />
+                  <div className="w-12 h-12 bg-custom-gold/10 rounded-lg flex items-center justify-center shrink-0 group-hover/link:bg-custom-gold/20 transition-colors">
+                    <LinkIcon size={20} className="text-custom-gold" />
                   </div>
                   <div className="flex-grow min-w-0">
                     <div className="flex items-center gap-2 mb-0.5">
-                      <span className="text-xs font-bold text-pink-500 uppercase">
+                      <span className="text-xs font-bold text-custom-gold uppercase">
                         {activity.linkType || 'Link'}
                       </span>
                     </div>

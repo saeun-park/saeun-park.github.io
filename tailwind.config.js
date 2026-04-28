@@ -52,9 +52,12 @@ export default {
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
+        'black-han-sans': ['"Black Han Sans"', 'sans-serif'],
       },
       colors: {
         github: '#24292e',
+        'custom-navy': '#12104E',
+        'custom-gold': '#edb352',
       },
     },
   },

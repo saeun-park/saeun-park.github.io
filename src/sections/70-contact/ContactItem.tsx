@@ -36,10 +36,10 @@ const ContactDetails: React.FC<ContactDetailsProps> = ({
       }}
     >
       <div className="flex flex-col items-center">
-        <span className="text-pink-600 font-bold tracking-widest text-sm uppercase [writing-mode:vertical-lr] rotate-180">
+        <span className="text-custom-gold font-bold tracking-widest text-sm uppercase [writing-mode:vertical-lr] rotate-180">
           Contact Info
         </span>
-        <div className="w-[1px] h-12 bg-pink-600 mt-4"></div>
+        <div className="w-[1px] h-12 bg-custom-gold mt-4"></div>
       </div>
 
       <div className="space-y-6">
@@ -49,14 +49,14 @@ const ContactDetails: React.FC<ContactDetailsProps> = ({
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-4 text-base md:text-lg text-gray-300 hover:text-pink-400 transition-all duration-300"
+            className="group flex items-center gap-4 text-base md:text-lg text-gray-300 hover:text-custom-gold transition-all duration-300"
           >
             <span className="p-2 bg-gray-700 rounded-full group-hover:bg-gray-600 transition-colors">
               {item.icon && IconMap[item.icon]
                 ? React.createElement(IconMap[item.icon], { size: 24 })
                 : null}
             </span>
-            <span className="border-b border-transparent group-hover:border-pink-400">
+            <span className="border-b border-transparent group-hover:border-custom-gold">
               {item.text}
             </span>
           </a>

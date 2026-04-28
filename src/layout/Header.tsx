@@ -24,10 +24,10 @@ const Header = ({ activeSection, onNavigate, isModalOpen }: HeaderProps) => {
     setIsMenuOpen(false);
   };
 
-  const darkSections = ['contact'];
+  const darkSections = ['contact', 'profile'];
   const isDarkSection = darkSections.includes(activeSection);
 
-  const textColor = isDarkSection ? 'text-white' : 'text-gray-600';
+  const textColor = isDarkSection ? 'text-gray-300' : 'text-gray-600';
   const mobileIconColor = isDarkSection ? 'text-white' : 'text-gray-700';
   const mobileTextColor = 'text-gray-800';
   const isProfile = activeSection === 'profile';
@@ -41,8 +41,8 @@ const Header = ({ activeSection, onNavigate, isModalOpen }: HeaderProps) => {
     >
       <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
         <div
-          className={`text-lg font-semibold cursor-pointer transition-colors hover:text-pink-600 
-            ${isProfile ? 'text-pink-600' : textColor}
+          className={`text-lg font-semibold cursor-pointer transition-colors hover:text-custom-gold 
+            ${isProfile ? 'text-custom-gold' : textColor}
             ${isModalOpen ? 'opacity-50' : ''}`}
           onClick={() => handleLinkClick('profile')}
         >
@@ -59,9 +59,9 @@ const Header = ({ activeSection, onNavigate, isModalOpen }: HeaderProps) => {
               <button
                 key={item}
                 onClick={() => handleLinkClick(sectionId)}
-                className={`text-lg font-light transition-colors hover:text-pink-600 ${
+                className={`text-lg font-light transition-colors hover:text-custom-gold ${
                   activeSection === sectionId
-                    ? 'text-pink-600 font-extrabold'
+                    ? 'text-custom-gold font-extrabold'
                     : textColor
                 }`}
               >
@@ -92,9 +92,9 @@ const Header = ({ activeSection, onNavigate, isModalOpen }: HeaderProps) => {
               <button
                 key={item}
                 onClick={() => handleLinkClick(sectionId)}
-                className={`text-2xl font-light transition-colors hover:text-pink-600 ${
+                className={`text-2xl font-light transition-colors hover:text-custom-gold ${
                   activeSection === sectionId
-                    ? 'text-pink-600 font-bold'
+                    ? 'text-custom-gold font-bold'
                     : mobileTextColor
                 }`}
               >

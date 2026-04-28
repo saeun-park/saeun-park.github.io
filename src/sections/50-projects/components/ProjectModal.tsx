@@ -70,7 +70,7 @@ const ProjectModal = ({
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-pink-500 hover:underline"
+                  className="flex items-center gap-2 text-custom-gold hover:underline"
                 >
                   <span>Link to Project</span>
                   <ExternalLink size={16} />

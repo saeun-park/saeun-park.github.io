@@ -7,6 +7,7 @@ interface AnimatedTypingTextProps {
   isVisible?: boolean;
   delayPerChar?: number;
   dotColorClass?: string;
+  showDot?: boolean;
 }
 
 const AnimatedTypingText: React.FC<AnimatedTypingTextProps> = ({
@@ -15,16 +16,15 @@ const AnimatedTypingText: React.FC<AnimatedTypingTextProps> = ({
   className = '',
   isVisible = true,
   delayPerChar = 0.15,
-  dotColorClass = 'text-pink-600',
+  dotColorClass = 'text-custom-gold',
+  showDot = true,
 }) => {
   const words = text.split(' ');
 
   return (
-    <Component
-      className={`font-montserrat font-bold leading-tight ${className}`}
-    >
+    <Component className={`leading-tight ${className}`}>
       {words.map((word, wordIndex) => (
-        <span key={wordIndex} className="block">
+        <span key={wordIndex} className="inline-block mr-[0.3em] last:mr-0">
           {word.split('').map((char, charIndex) => {
             const globalIndex =
               words.slice(0, wordIndex).join('').length + charIndex + wordIndex;
@@ -43,7 +43,7 @@ const AnimatedTypingText: React.FC<AnimatedTypingTextProps> = ({
             );
           })}
 
-          {wordIndex === words.length - 1 && (
+          {showDot && wordIndex === words.length - 1 && (
             <span
               className={`opacity-0 ${
                 isVisible ? 'animate-typing-dot' : ''

@@ -14,17 +14,18 @@ const Contact = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="min-h-screen bg-gray-800 flex flex-col text-white pt-20"
+      className="min-h-screen bg-custom-navy flex flex-col text-white pt-20"
     >
       <div className="flex-grow flex flex-col justify-center px-8 md:px-24 lg:px-40">
-        <div className="mb-20 md:mb-32">
+        <div className="mb-20 md:mb-32 flex justify-center">
           {/* TITLE */}
           <AnimatedTypingText
             text={CONTACT_TITLE}
             as="h2"
-            className="text-4xl md:text-6xl text-left"
+            className="text-[30px] md:text-[60px] lg:text-[80px] font-black-han-sans text-custom-gold text-center"
             isVisible={isVisible}
             delayPerChar={0.1}
+            showDot={false}
           />
         </div>
         <ContactDetails

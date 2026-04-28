@@ -57,7 +57,7 @@ const Project = ({ setSelectedProject }: ProjectProps) => {
                 onClick={() => setActiveTab(tab)}
                 className={`px-4 py-2 text-sm sm:text-base font-medium rounded-2xl transition-all duration-300 ${
                   activeTab === tab
-                    ? 'bg-pink-500 text-white shadow-md'
+                    ? 'bg-custom-gold text-white shadow-md'
                     : 'text-gray-600 hover:bg-gray-300'
                 }`}
               >
@@ -70,7 +70,7 @@ const Project = ({ setSelectedProject }: ProjectProps) => {
           <div className="absolute right-0 hidden sm:block">
             <label
               htmlFor="importantToggle"
-              className="flex items-center space-x-2 cursor-pointer text-gray-600 hover:text-pink-500"
+              className="flex items-center space-x-2 cursor-pointer text-gray-600 hover:text-custom-gold"
             >
               <input
                 type="checkbox"
@@ -82,7 +82,7 @@ const Project = ({ setSelectedProject }: ProjectProps) => {
               <div
                 className={`w-5 h-5 border-2 rounded transition-colors ${
                   showImportantOnly
-                    ? 'border-pink-500 bg-pink-500'
+                    ? 'border-custom-gold bg-custom-gold'
                     : 'border-gray-400'
                 } flex items-center justify-center`}
               >

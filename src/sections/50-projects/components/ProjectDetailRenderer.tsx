@@ -14,7 +14,7 @@ const ProjectDetailRenderer: React.FC<ProjectDetailRendererProps> = ({
     case 'text':
       return (
         <div key={index}>
-          <h4 className="text-lg font-medium text-pink-500 mb-2">
+          <h4 className="text-lg font-medium text-custom-gold mb-2">
             {detail.title}
           </h4>
           <p className="text-sm leading-loose text-gray-800 whitespace-pre-wrap">

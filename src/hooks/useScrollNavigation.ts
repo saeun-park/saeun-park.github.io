@@ -85,10 +85,10 @@ const useScrollNavigation = ({
       const elementPosition =
         element.getBoundingClientRect().top + window.scrollY;
 
-      if (sectionId === 'contact') {
+      if (sectionId === 'contact' || sectionId === 'aboutme') {
         smoothScrollTo(elementPosition, 800);
       } else {
-        const offsetPosition = elementPosition - headerOffset - 20;
+        const offsetPosition = elementPosition - headerOffset;
         smoothScrollTo(offsetPosition, 800);
       }
     }
